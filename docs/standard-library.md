@@ -8,12 +8,13 @@ Reflexions on the standard library functions to develop & their related namespac
   * `betweenness`
 * `graphology-components`
 * `graphology-generators`
-* `graphology-layout`
-  * `forceAtlas2`
+* `graphology-layout-forceAtlas2`
 * `graphology-link-analysis`
   * `hits`
   * `page-rank`
+* `graphology-modularity`
 * `graphology-operators`
+  * `complement`
   * `reverse`
 * `graphology-path`
   * `a-star`
@@ -21,3 +22,5 @@ Reflexions on the standard library functions to develop & their related namespac
 * `graphology-utils`
   * `isGraph`
   * `subgraph`
+
+Possibility, afterwards, to create a meta-package `graphology-lib` with every module bundled.
