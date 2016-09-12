@@ -153,7 +153,7 @@ graph.neighbors('Thomas', 'Rosaline');
 
 // Using the array-returning methods:
 graph.neighbors('Thomas');
->>> ['Rosaline', 'Emmett', 'Catherine]
+>>> ['Rosaline', 'Emmett', 'Catherine']
 
 graph.neighbors(['Rosaline', 'Thomas']);
 >>> ['Emmett', 'Catherine']
