@@ -20,7 +20,7 @@ const graph = new Graph(data, options);
 
 ## Arguments
 
-* **data** <span class="code">[Graph|SerializedGraph]</span>: pre-existing data to give to the constructor. This data can either be an existing `Graph` instance, and in this case both nodes & edges will be imported from the given graph, or a serialized graph whose format is described [here](utilities.md#regarding-graph-serialization).
+* **data** <span class="code">[Graph|SerializedGraph]</span>: pre-existing data to give to the constructor. This data can either be an existing `Graph` instance, and in this case both nodes & edges will be imported from the given graph, or a serialized graph whose format is described [here](serialization.md#format).
 * **options** <span class="code">[object]</span>: options to customize the behavior of the graph & performance hints:
   * **allowSelfLoops** <span class="code">[boolean]</span> <span class="default">true</span>: should the graph allow self-loops?
   * **defaultEdgeAttributes** <span class="code">[object]</span>: default edge attributes merged with the provided ones.
