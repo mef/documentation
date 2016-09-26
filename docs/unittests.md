@@ -22,8 +22,6 @@ module.exports = specs(Graph, Graph, {map: true});
 
 * **class** <span class="code">function</span>: the Graph class of your implementation.
 * **implementation** <span class="code">object</span>: an object containing the rest of the implementation (alternative constructors, errors). Note that most of the time, or at least if you export your implementation through CommonJS, the `class` and `implementation` arguments will be the same.
-* **options** <span class="code">object</span>: options:
-  * **map** <span class="code">boolean</span> <span class="default">true</span>: whether to test `GraphMap` also.
 
 Then, run the tests using `mocha`:
 

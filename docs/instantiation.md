@@ -27,7 +27,6 @@ const graph = new Graph(data, options);
   * **defaultNodeAttributes** <span class="code">[object]</span>: default node attributes merged with the provided ones.
   * **edgeKeyGenerator** <span class="code">[function]</span>: Function used internally by the graph to produce keys for key-less edges. By default, the graph will produce keys as UUID v4. For more information concerning the function you can provide, see [this](#edge-key-generator-function).
   * **indices** <span class="code">[object]</span>: Options regarding index computation. For more information, see [this](./advanced.md#indices).
-  * **map** <span class="code">[boolean]</span> <span class="default">false</span>: Should the graph allow references as key like a JavaScript `Map` object?
   * **multi** <span class="code">[boolean]</span> <span class="default">false</span>: Should the graph allow parallel edges?
   * **onDuplicateEdge** <span class="code">[function]</span>: Optional function that will solve the addition of a duplicate edge rather than throwing an error. For more information, see [this](#duplicate-elements).
   * **onDuplicateNode** <span class="code">[function]</span>: Optional function that will solve the addition of a duplicate node rather than throwing an error. For more information, see [this](#duplicate-elements).
@@ -47,20 +46,19 @@ By default, the `Graph` object is a simple mixed graph, but here are the differe
 
 * **Type of the graph?**: `Directed`, `Undirected` or none (mixed graph).
 * **Graph with parallel edges?**: `Multi` or none (simple graph).
-* **Graph accepting references as keys?**: `Map` or none.
 
 Then to build the name, one must order the components likewise:
 
 ```
-Multi? + Type? + Graph + Map?
+Multi? + Type? + Graph
 ```
 
 *Examples*
 
 ```js
 MultiGraph
-DirectedGraphMap
-MultiUndirectedGraphMap
+DirectedGraph
+MultiUndirectedGraph
 (...)
 ```
 

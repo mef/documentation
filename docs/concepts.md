@@ -2,9 +2,17 @@
 
 ## Keys
 
-Both nodes & edges are represented in the graph by keys. Those keys, whether you use a standard `Graph` or a `GraphMap` instance, can be a lot of different things.
+Both nodes & edges are represented in the graph by keys. For simplicity's sake the graph, like JavaScript's native objects, will always coerce the given keys as strings.
 
-This said, the user should have in mind that both classes won't fix JavaScript quirks and should expect the keys of a `Graph` to have the same downsides as any plain object's keys (namely string coercion). The same can be said about `GraphMap` and the ES6 `Map` object.
+We could technically handle references as keys but finally decided against it for the following reasons:
+
+* Ensure that serialization remains as straightforward as possible.
+* Not to put a pressure on end-users' code by having to force the usage of, for instance, ES6 Maps to ensure their code will handle every Graph case possible.
+
+This said, the user should keep in mind that the graph have the same quirks as a JavaScript native object:
+
+* Numbers as keys will be coerced to strings.
+* Giving objects as keys will result in a `[object Object]` key etc.
 
 ## Errors
 

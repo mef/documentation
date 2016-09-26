@@ -19,7 +19,7 @@ const node = graph.addNode('John', {
 
 *Arguments*
 
-* **node** <span class="code">any</span>: the node can be anything a JS object would accept as key or anything if handling a `GraphMap`.
+* **node** <span class="code">any</span>: the key referencing the node.
 * **attributes** <span class="code">[object]</span>: optional attributes.
 
 ## #.addEdge
@@ -90,7 +90,7 @@ const edge = graph.addEdge('John->Jack', 'John', 'Jack', {
 
 *Arguments*
 
-* **edge** <span class="code">any</span>: the edge can be anything a JS object would accept as key or anything if handling a `GraphMap`.
+* **edge** <span class="code">any</span>: the key referencing the edge.
 * **source** <span class="code">any</span>: the source node.
 * **target** <span class="code">any</span>: the target node.
 * **attributes** <span class="code">[object]</span>: optional attributes.

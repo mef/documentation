@@ -68,20 +68,6 @@ multiGraph.multi;
 >>> true
 ```
 
-## #.map
-
-Whether the graph accepts references as keys.
-
-```js
-const graph = new Graph();
-graph.map;
->>> false
-
-const graphMap = new GraphMap();
-graph.map;
->>> true
-```
-
 ## #.allowSelfLoops
 
 Whether the graph accepts self loops or not.
