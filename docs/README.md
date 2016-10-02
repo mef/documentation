@@ -4,9 +4,9 @@
 
 `graphology` therefore handles directed, undirected & mixed graphs which can be either simple or have parallel edges.
 
-Along with those specifications, one will always find a standard library full of graph theory algorithms and common utilities.
+Along with those specifications, one will also find a standard library full of graph theory algorithms and common utilities.
 
-So, even if we propose a reference implementation, anyone remains free to implement the present specifications and still use the standard library with the new implementation.
+So, even if we propose a reference implementation, anyone remains free to implement the present specifications and still be able to use the standard library & all the relevant libraries coded to work with `graphology`.
 
 ## Installation
 
@@ -55,6 +55,6 @@ const children = edges
   .filter(edge => graph.getEdgeAttribute(edge, 'type') === 'FATHER_OF')
   .map(edge => graph.relatedNode('Jack', edge));
 
-console.log(sons);
+console.log(children);
 >>> ['John', 'Catherine']
 ```
