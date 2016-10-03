@@ -109,7 +109,7 @@ graph.on('cleared', function() {
 });
 
 graph.clear();
-// Wil fire:
+// Will trigger:
 >>> 0, 0
 ```
 
