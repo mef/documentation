@@ -38,6 +38,22 @@ graph.getNodeAttributes('Martha');
 }
 ```
 
+### #.hasNodeAttribute
+
+Returns whether the desired node's attribute is set.
+
+*Example*
+
+```js
+graph.addNode('Martha', {eyes: 'blue'});
+
+graph.hasNodeAttribute('Martha', 'eyes');
+>>> true
+
+graph.hasNodeAttribute('Martha', 'age');
+>>> false
+```
+
 ### #.setNodeAttribute
 
 Set the attribute of a node to the given value.
@@ -77,6 +93,21 @@ graph.updateNodeAttribute('Martha', 'occurrences', n => n + 1);
 * **node** <span class="code">any</span>: the node to update.
 * **attribute** <span class="code">string</span>: name of the attribute to update.
 * **updater** <span class="code">function</span>: function used to perform the update.
+
+### #.removeNodeAttribute
+
+Remove the given node's attribute altogether.
+
+*Example*
+
+```js
+graph.addNode('Martha', {age: 34});
+
+graph.removeNodeAttribute('Martha', 'age');
+
+graph.hasNodeAttribute('Martha', 'age');
+>>> false
+```
 
 ### #.replaceNodeAttributes
 
@@ -132,7 +163,8 @@ graph.addNode('Catherine');
 const edge = graph.addEdge('Martha', 'Catherine', {type: 'KNOWS'});
 
 // Using the edge's key:
-const type = graph.getEdgeAttribute(edge, 'type');
+graph.getEdgeAttribute(edge, 'type');
+>>> 'KNOWS'
 
 // Using the edge's source & target:
 graph.getEdgeAttribute('Martha', 'Catherine', 'type');
@@ -178,6 +210,36 @@ graph.getEdgeAttributes('Martha', 'Catherine');
 2. Using the source & target:
   * **source** <span class="code">any</span>: source of the edge.
   * **target** <span class="code">any</span>: target of the edge.
+
+### #.hasEdgeAttribute
+
+Returns whether the desired edge's attribute is set.
+
+*Example*
+
+```js
+graph.addNode('Martha');
+graph.addNode('Catherine');
+const edge = graph.addEdge('Martha', 'Catherine', {type: 'KNOWS'});
+
+// Using the edge's key:
+const type = graph.hasEdgeAttribute(edge, 'type');
+>>> true
+
+// Using the edge's source & target:
+graph.hasEdgeAttribute('Martha', 'Catherine', 'type');
+>>> 'KNOWS'
+```
+
+*Arguments*
+
+1. Using the key:
+  * **edge** <span class="code">any</span>: the target edge.
+  * **attribute** <span class="code">string</span>: name of the attribute to poll.
+2. Using the source & target:
+  * **source** <span class="code">any</span>: source of the edge.
+  * **target** <span class="code">any</span>: target of the edge.
+  * **attribute** <span class="code">string</span>: name of the attribute to poll.
 
 ### #.setEdgeAttribute
 
@@ -242,6 +304,37 @@ graph.updateEdgeAttribute('Martha', 'Jack', 'weight', n => n + 1);
   * **target** <span class="code">any</span>: target of the edge.
   * **attribute** <span class="code">string</span>: name of the attribute to update.
   * **updater** <span class="code">function</span>: function used to perform the update.
+
+### #.removeEdgeAttribute
+
+Remove the given edge's attribute altogether.
+
+*Example*
+
+```js
+graph.addNode('Martha');
+graph.addNode('Jack');
+const edge = graph.addEdge('Martha', 'Jack', {type: 'KNOWS'});
+
+// Using the edge's key:
+graph.removeEdgeAttribute(edge, 'type');
+
+// Using the edge's source & target:
+graph.removeEdgeAttribute('Martha', 'Jack', 'type');
+
+graph.hasEdgeAttribute(edge, 'type');
+>>> false
+```
+
+*Arguments*
+
+1. Using the key:
+  * **edge** <span class="code">any</span>: the edge to update.
+  * **attribute** <span class="code">string</span>: name of the attribute to set.
+2. Using the source & target:
+  * **source** <span class="code">any</span>: source of the edge.
+  * **target** <span class="code">any</span>: target of the edge.
+  * **attribute** <span class="code">string</span>: name of the attribute to set.
 
 ### #.replaceEdgeAttributes
 
