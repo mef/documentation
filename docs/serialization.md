@@ -333,7 +333,7 @@ graph.exportDirectedEdges();
 ]
 
 // Undirected edges are filtered
-graph.exportEdges(['T->M', 'A']);
+graph.exportDirectedEdges(['T->M', 'A']);
 >>> [
   {
     key: 'T->M',
