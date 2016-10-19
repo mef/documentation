@@ -147,6 +147,10 @@ graph.addEdge('Rosaline', 'Catherine');
 graph.addEdge('John', 'Daniel');
 graph.addEdge('John', 'Daniel');
 
+// Asking whether two nodes are neighbors:
+graph.neighbors('Thomas', 'Rosaline');
+>>> true
+
 // Using the array-returning methods:
 graph.neighbors('Thomas');
 >>> ['Rosaline', 'Emmett', 'Catherine']
@@ -181,3 +185,6 @@ graph.countNeighbors('Thomas');
   * **node** <span class="code">any</span>: the node's key.
 2. **Using a [bunch](concept.md#bunches) of nodes**: will iterate over the union of the nodes' relevant neighbors.
   * **bunch** <span class="code">bunch</span>: bunch of related nodes.
+3. **Using two nodes' keys**: will return whether the two given nodes are neighbors.
+  * **node1** <span class="code">any</span>: first node.
+  * **node2** <span class="code">any</span>: second node.

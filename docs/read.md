@@ -117,30 +117,6 @@ graph.outDegree('Timothy');
 * `#.undirectedDegree`
 * `#.degree` (`#.directedDegree` + `#.undirectedDegree`)
 
-## #.adjacent
-
-Returns whether the two given nodes are adjacent.
-
-*Example*
-
-```js
-graph.addNode('Timothy');
-graph.addNode('Clarice');
-graph.addNode('Martha');
-const edge = graph.addEdge('Clarice', 'Timothy');
-
-graph.adjacent('Timothy', 'Clarice');
->>> true
-
-graph.adjacent('Timothy', 'Martha');
->>> false
-```
-
-*Arguments*
-
-* **node1** <span class="code">any</span>: first node.
-* **node2** <span class="code">any</span>: second node.
-
 ## #.source
 
 Returns the source of the given edge.
