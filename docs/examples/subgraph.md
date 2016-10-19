@@ -15,7 +15,7 @@ function subgraph(graph, nodes) {
     // An edge is deemed relevant if both its end are attached to
     // one of the subgraph's nodes.
     const relevantEdges = graph.outboundEdges(node).filter(edge => {
-      const target = graph.relatedNode(node, edge);
+      const target = graph.opposite(node, edge);
 
       return nodeSet.has(target);
     });

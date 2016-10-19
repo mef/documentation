@@ -53,7 +53,7 @@ const edges = graph.outEdges('Jack');
 
 const children = edges
   .filter(edge => graph.getEdgeAttribute(edge, 'type') === 'FATHER_OF')
-  .map(edge => graph.relatedNode('Jack', edge));
+  .map(edge => graph.opposite('Jack', edge));
 
 console.log(children);
 >>> ['John', 'Catherine']
