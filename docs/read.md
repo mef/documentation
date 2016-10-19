@@ -155,9 +155,9 @@ graph.target(edge);
 
 * **edge** <span class="code">any</span>: target edge.
 
-## #.relatedNode
+## #.opposite
 
-Given a node & an edge, returns the node at the other end of the relation.
+Given a node & an edge, returns the node at the other end of the edge.
 
 *Example*
 
@@ -166,7 +166,7 @@ graph.addNode('Timothy');
 graph.addNode('Clarice');
 const edge = graph.addEdge('Clarice', 'Timothy');
 
-graph.relatedNode('Timothy', edge);
+graph.opposite('Timothy', edge);
 >>> 'Clarice'
 ```
 

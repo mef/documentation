@@ -21,7 +21,7 @@
   * [#.degree](read.md#degree)
   * [#.source](read.md#source)
   * [#.target](read.md#target)
-  * [#.relatedNode](read.md#relatednode)
+  * [#.opposite](read.md#opposite)
   * [#.extremities](read.md#extremities)
   * [#.directed](read.md#directed)
   * [#.selfLoop](read.md#selfloop)
