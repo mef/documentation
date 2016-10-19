@@ -28,8 +28,6 @@ const graph = new Graph(data, options);
   * **edgeKeyGenerator** <span class="code">[function]</span>: Function used internally by the graph to produce keys for key-less edges. By default, the graph will produce keys as UUID v4. For more information concerning the function you can provide, see [this](#edge-key-generator-function).
   * **indices** <span class="code">[object]</span>: Options regarding index computation. For more information, see [this](./advanced.md#indices).
   * **multi** <span class="code">[boolean]</span> <span class="default">false</span>: Should the graph allow parallel edges?
-  * **onDuplicateEdge** <span class="code">[function]</span>: Optional function that will solve the addition of a duplicate edge rather than throwing an error. For more information, see [this](#duplicate-elements).
-  * **onDuplicateNode** <span class="code">[function]</span>: Optional function that will solve the addition of a duplicate node rather than throwing an error. For more information, see [this](#duplicate-elements).
   * **type** <span class="code">[string]</span> <span class="default">"mixed"</span>: Type of the graph. One of `directed`, `undirected` or `mixed`.
 
 ## Alternative constructors
@@ -106,71 +104,3 @@ graph.addEdge('John', 'Martha');
 graph.getEdge('John', 'Martha');
 >>> 'John->Martha'
 ```
-
-## Duplicate elements
-
-By default, the API wil throw as soon as someone tries to add a node or an edge already existing in the graph. But it is possible to override this behavior through the `onDuplicateNode` & `onDuplicateEdge` option if needed.
-
-This option is quite convenient for developers wanting to consider the addition of duplicate edges as a weight increment, for instance.
-
-The given functions have therefore the opportunity to mutate the graph instead.
-
-### Duplicate nodes
-
-A graph considering duplicate nodes as incrementing the occurrence of said node.
-
-```js
-const solver = (graph, {key: node}) => {
-
-  // Just incrementing the "occurrences" attribute
-  graph.updateNodeAttribute(node, 'occurrences', x => x + 1);
-};
-
-const graph = new Graph(null, {onDuplicateNode: solver});
-
-graph.addNode('John', {occurrences: 1});
-graph.addNode('John');
-
-graph.getNodeAttributes('John');
->>> {occurrences: 2}
-```
-
-*Arguments*
-
-* **graph** <span class="code">Graph</span>: the graph instance.
-* **data** <span class="code">object</span>: information about the duplicate node:
-  * **key** <span class="code">any</span>: the node's key.
-  * **attributes** <span class="code">object</span>: attributes passed to the `#.addNode` function.
-
-### Duplicate edges
-
-A graph considering duplicate edges as incrementing the weight of said edge.
-
-For multi-graphs, the solving function will only trigger if an edge is added twice with the same key.
-
-```js
-const solver = (graph, {key: edge}) => {
-
-  // Just incrementing the "weight" attribute
-  graph.updateEdgeAttribute(edge, 'weight', x => x + 1);
-};
-
-const graph = new Graph(null, {onDuplicateEdge: solver});
-
-graph.addNodesFrom(['John', 'Clemence']);
-graph.addEdge('John', 'Clemence', {weight: 1});
-graph.addEdge('John', 'Clemence');
-
-graph.getEdgeAttributes('John', 'Clemence');
->>> {weight: 2}
-```
-
-*Arguments*
-
-* **graph** <span class="code">Graph</span>: the graph instance.
-* **meta** <span class="code">object</span>: information about the duplicate edge:
-  * **key** <span class="code">any</span>: the edge's key.
-  * **source** <span class="code">any</span>: the edge's source.
-  * **target** <span class="code">any</span>: the edge's target.
-  * **undirected** <span class="code">boolean</span>: whether the edge is undirected.
-  * **attributes** <span class="code">object</span>: attributes passed to the `#.addNode` function.
