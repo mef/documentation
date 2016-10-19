@@ -27,6 +27,7 @@
   * [#.selfLoop](read.md#selfloop)
 * [Mutation](mutation.md)
   * [#.addNode](mutation.md#addnode)
+  * [#.mergeNode](mutation.md#mergenode)
   * [#.addEdge](mutation.md#addedge)
   * [#.addDirectedEdge](mutation.md#adddirectededge)
   * [#.addUndirectedEdge](mutation.md#addundirectededge)

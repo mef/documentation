@@ -4,6 +4,8 @@
 
 Adds a single node to the graph with optional attributes and returns the node.
 
+Will throw if the node already exists in the graph.
+
 *Example*
 
 ```js
@@ -21,6 +23,32 @@ const node = graph.addNode('John', {
 
 * **node** <span class="code">any</span>: the key referencing the node.
 * **attributes** <span class="code">[object]</span>: optional attributes.
+
+## #.mergeNode
+
+Adds a node if the node does not exist in the graph yet or else merge the provided attributes with the already existing ones.
+
+*Example*
+
+```js
+// Since 'John' does not exist in the graph, he will be added
+graph.mergeNode('John');
+
+// Since 'John' already exists in the graph, this will do nothing
+graph.mergeNode('John');
+
+// This will merge the attributes with the existing ones:
+graph.mergeNode('John', {eyes: 'blue'});
+graph.getNodeAttributes('John');
+>>> {
+  eyes: 'blue'
+}
+```
+
+*Arguments*
+
+* **node** <span class="code">any</span>: the node's key.
+* **attributes** <span class="code">object</span>: the node's initial attributes or attributes to merge with the already existing ones.
 
 ## #.addEdge
 

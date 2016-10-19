@@ -11,7 +11,7 @@ Using a `Graph` instance, it is possible to iterate on the three following thing
 The library basically proposes two ways to iterate:
 
 * Methods returning arrays of keys.
-* Counting methods when the implementationis able to return a number without creating an array.
+* Counting methods when the implementation is able to return a number without creating an array.
 
 **On what do we iterate?**
 
