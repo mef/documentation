@@ -19,6 +19,7 @@
   * [#.hasEdge](read.md#hasedge)
   * [#.getEdge](read.md#getedge)
   * [#.degree](read.md#degree)
+  * [#.adjacent](read.md#adjacent)
   * [#.source](read.md#source)
   * [#.target](read.md#target)
   * [#.opposite](read.md#opposite)
