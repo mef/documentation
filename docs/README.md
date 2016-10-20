@@ -1,12 +1,12 @@
 # Graphology
 
-`graphology` is a specification for a robust & multipurpose JavaScript `Graph` object and aiming at supporting various kinds of graphs under a same unified interface.
+`graphology` is a specification and reference implementation for a robust & multipurpose JavaScript `Graph` object.
 
-`graphology` therefore handles directed, undirected & mixed graphs which can be either simple or have parallel edges.
+It aims at supporting various kinds of graphs under a same unified interface.
 
-Along with those specifications, one will also find a standard library full of graph theory algorithms and common utilities.
+A `graphology` graph can therefore be directed, undirected or mixed and can be simple or support parallel edges.
 
-So, even if we propose a reference implementation, anyone remains free to implement the present specifications and still be able to use the standard library & all the relevant libraries coded to work with `graphology`.
+Along with those specifications, one will also find a [standard library](standard-library.md) full of graph theory algorithms and common utilities such as graph generators etc.
 
 ## Installation
 
@@ -19,42 +19,25 @@ npm install --save graphology
 ## Quick Start
 
 ```js
-import Graph from 'graphology';
+const Graph = require('graphology');
 
-// Let's create our graph:
 const graph = new Graph();
+graph.addNode('John');
+graph.addNode('Martha');
+graph.addEdge('John', 'Martha');
 
-// Let's add some nodes representing people:
-graph.addNode('Jack', {age: 56});
-graph.addNode('John', {age: 13});
-graph.addNode('Catherine', {age: 15});
-graph.addNode('Martha', {age: 94});
+console.log('Number of nodes', graph.order);
+console.log('Number of edges', graph.size);
 
-// And some relations between them:
-graph.addEdge('Jack', 'John', {type: 'FATHER_OF'});
-graph.addEdge('Jack', 'Catherine', {type: 'FATHER_OF'});
-graph.addEdge('Martha', 'Jack', {type: 'MOTHER_OF'});
-
-// How many nodes do we have?
-console.log(graph.order);
->>> 4
-
-// And how many edges?
-console.log(graph.size);
->>> 5
-
-// Let's print the age of every person:
-graph.nodes().forEach(function(node) {
-  console.log(graph.getNodeAttribute(node, 'age'));
-});
-
-// Let's find the children of Jack:
-const edges = graph.outEdges('Jack');
-
-const children = edges
-  .filter(edge => graph.getEdgeAttribute(edge, 'type') === 'FATHER_OF')
-  .map(edge => graph.opposite('Jack', edge));
-
-console.log(children);
->>> ['John', 'Catherine']
+console.log('Nodes', graph.nodes());
 ```
+
+## Implementing graphology
+
+`graphology` merely is a specification so that anyone can implement it its own way if necessary while keeping the advantages of being able to use the [standard library](standard-library.md).
+
+Graphs are complex structures and, while we designed the reference implementation to handle most common cases with good performance, one will always be able to implement the present specifications in a more performant fashion for very specific use cases.
+
+It is therefore possible to test your custom implementation against the specifications' unit tests.
+
+Directions about this can be found [here](unittests.md).

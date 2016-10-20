@@ -8,7 +8,7 @@ First, you need to install `graphology` and `mocha` from npm:
 npm install --save-dev graphology mocha
 ```
 
-Then you need to create a file to run with mocha:
+Then you need to create a file that will be run by `mocha`:
 
 ```js
 // test.js

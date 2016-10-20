@@ -1,4 +1,4 @@
-# Exemple: Reversing a graph
+## Exemple: Reversing a graph
 
 ```js
 function reverse(graph) {

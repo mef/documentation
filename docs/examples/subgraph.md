@@ -1,4 +1,4 @@
-# Exemple: Subgraphs
+## Exemple: Subgraphs
 
 ```js
 function subgraph(graph, nodes) {

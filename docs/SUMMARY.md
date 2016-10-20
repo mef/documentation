@@ -1,9 +1,10 @@
 # Summary
 
 * [Introduction](README.md)
+* [Standard library](standard-library.md)
 * [Examples](examples.md)
-  * [Creating a subgraph](examples/subgraph.md)
-  * [Reversing a graph](examples/reverse.md)
+  * [1. Reversing a graph](examples/reverse.md)
+  * [2. Creating a subgraph](examples/subgraph.md)
 * [Concepts](concepts.md)
 * [Instantiation](instantiation.md)
   * [Arguments](instantiation.md#arguments)
@@ -96,6 +97,3 @@
 * [Advanced](advanced.md)
   * [Indices](advanced.md#indices)
 * [Running the unit tests](unittests.md)
-* [Conclave](discussion.md)
-  * [Standard library](standard-library.md)
-  * [Concerning sigma](sigma.md)
