@@ -50,6 +50,33 @@ graph.getNodeAttributes('John');
 * **node** <span class="code">any</span>: the node's key.
 * **attributes** <span class="code">object</span>: the node's initial attributes or attributes to merge with the already existing ones.
 
+## #.addNodesFrom
+
+Adds a bunch of nodes at once. For precisions about what a bunch can be (array, set etc.), read [this](concepts.md#bunches).
+
+*Example*
+
+```js
+// Add some nodes from an array
+graph.addNodesFrom(['John', 'Martha']);
+
+graph.nodes();
+>>> ['John', 'Martha']
+
+// Add nodes from an object
+graph.addNodesFrom({John: {age: 34}, Martha: {age: 32}});
+
+graph.nodes();
+>>> ['John', 'Martha']
+
+graph.getNodeAttribute('John', 'age');
+>>> 34
+```
+
+*Arguments*
+
+* **bunch** <span class="code">bunch</span>: bunch of nodes to add.
+
 ## #.addEdge
 
 Adds a single directed edge if the graph is `directed` or `mixed`, or an undirected edge if the graph is `undirected` and returns the edge.

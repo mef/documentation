@@ -2,7 +2,7 @@
 
 ## Keys
 
-Both nodes & edges are represented in the graph by keys. For simplicity's sake the graph, like JavaScript's native objects, will always coerce the given keys as strings.
+Both nodes & edges are represented by keys in the graph. For simplicity's sake, like JavaScript's native objects, the graph will always coerce the given keys as strings.
 
 We could technically handle references as keys but finally decided against it for the following reasons:
 

@@ -28,6 +28,7 @@
 * [Mutation](mutation.md)
   * [#.addNode](mutation.md#addnode)
   * [#.mergeNode](mutation.md#mergenode)
+  * [#.addNodesFrom](mutation.md#addnodesfrom)
   * [#.addEdge](mutation.md#addedge)
   * [#.addDirectedEdge](mutation.md#adddirectededge)
   * [#.addUndirectedEdge](mutation.md#addundirectededge)
