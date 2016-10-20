@@ -96,6 +96,5 @@
   * [Indices](advanced.md#indices)
 * [Running the unit tests](unittests.md)
 * [Conclave](discussion.md)
-  * [Discussion](discussion.md)
   * [Standard library](standard-library.md)
   * [Concerning sigma](sigma.md)
