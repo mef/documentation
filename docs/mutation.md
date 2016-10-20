@@ -26,18 +26,18 @@ const node = graph.addNode('John', {
 
 ## #.mergeNode
 
-Adds a node if the node does not exist in the graph yet or else merge the provided attributes with the already existing ones.
+Adds a node only if the edge does not exist in the graph yet. Else it will merge the provided attributes with the already existing ones.
 
 *Example*
 
 ```js
-// Since 'John' does not exist in the graph, he will be added
+// Since 'John' does not exist in the graph, a node will be added
 graph.mergeNode('John');
 
 // Since 'John' already exists in the graph, this will do nothing
 graph.mergeNode('John');
 
-// This will merge the attributes with the existing ones:
+// Note that if the node already exists, attributes are merged
 graph.mergeNode('John', {eyes: 'blue'});
 graph.getNodeAttributes('John');
 >>> {
@@ -128,6 +128,76 @@ const edge = graph.addEdge('John->Jack', 'John', 'Jack', {
 Adds a single directed edge to the graph.
 
 Alias of [`#.addEdgeWithKey`](#addedgewithkey) if the graph is `directed` or `mixed`.
+
+## #.mergeEdge
+
+Adds an edge with the given key only if the edge does not exist in the graph yet. Else it will merge the provided attributes with the already existing ones.
+
+Furthermore, this method will also add the source and/or target nodes to the graph if not found.
+
+Note that an edge is deemed to already exist in a simple graph if the graph can find one edge of same type going from the same source to the same target.
+
+In a multi graph, this method will therefore always add a new edge.
+
+```js
+const graph = new UndirectedGraph();
+graph.addNodesFrom(['John', 'Martha']);
+
+// Since the edge does not exist, it will be added
+graph.mergeEdge('John', 'Martha');
+
+// Now, since the edge already exists, this will do nothing
+graph.mergeEdge('John', 'Martha');
+
+// Note that if the edge already exists, attributes are merged
+graph.mergeEdge('John', 'Martha', {type: 'KNOWS'});
+graph.getEdgeAttribute('John', 'Martha');
+>>> {
+  type: 'KNOWS'
+}
+```
+
+*Variants*
+
+* `#.mergeDirectedEdge`
+* `#.mergeUndirectedEdge`
+
+## #.mergeEdgeWithKey
+
+Adds an edge with the given key only if the edge does not exist in the graph yet. Else it will merge the provided attributes with the already existing ones.
+
+Furthermore, this method will also add the source and/or target nodes to the graph if not found.
+
+Note that in this case, an edge is deemed to already exist in the graph if an edge with the same key, same type and same source & target is found in the graph.
+
+If one tries to add an edge with the given key and if the graph has an edge with the same key but a different source & target, the method will throw to notify of the inconsistency.
+
+
+```js
+const graph = new UndirectedGraph();
+graph.addNodesFrom(['John', 'Martha', 'Thomas']);
+
+// Since the edge does not exist, it will be added
+graph.mergeEdgeWithKey('J->M', 'John', 'Martha');
+
+// Now, since the edge already exists, this will do nothing
+graph.mergeEdgeWithKey('J->M', 'John', 'Martha');
+
+// Note that if the edge already exists, attributes are merged
+graph.mergeEdgeWithKey('J->M', 'John', 'Martha', {type: 'KNOWS'});
+graph.getEdgeAttribute('J->M');
+>>> {
+  type: 'KNOWS'
+}
+
+// However, the following will throw an error
+graph.mergeEdgeWithKey('J->M', 'Thomas', 'Martha');
+```
+
+*Variants*
+
+* `#.mergeDirectedEdgeWithKey`
+* `#.mergeUndirectedEdgeWithKey`
 
 ## #.addUndirectedEdgeWithKey
 

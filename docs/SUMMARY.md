@@ -34,6 +34,8 @@
   * [#.addEdgeWithKey](mutation.md#addedgewithkey)
   * [#.addDirectedEdgeWithKey](mutation.md#adddirectededgewithkey)
   * [#.addUndirectedEdgeWithKey](mutation.md#addundirectededgewithkey)
+  * [#.mergeEdge](mutation.md#mergeedge)
+  * [#.mergeEdgeWithKey](mutation.md#mergeedgewithkey)
   * [#.dropNode](mutation.md#dropnode)
   * [#.dropNodes](mutation.md#dropnodes)
   * [#.dropEdge](mutation.md#dropedge)
