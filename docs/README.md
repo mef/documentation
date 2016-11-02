@@ -2,11 +2,11 @@
 
 `graphology` is a specification and reference implementation for a robust & multipurpose JavaScript `Graph` object.
 
-It aims at supporting various kinds of graphs under a same unified interface.
+It aims at supporting various kinds of graphs with the same unified interface.
 
 A `graphology` graph can therefore be directed, undirected or mixed and can be simple or support parallel edges.
 
-Along with those specifications, one will also find a [standard library](standard-library.md) full of graph theory algorithms and common utilities such as graph generators etc.
+Along with those specifications, one will also find a [standard library](#standard-library) full of graph theory algorithms and common utilities such as graph generators, layouts etc.
 
 ## Installation
 
@@ -32,9 +32,18 @@ console.log('Number of edges', graph.size);
 console.log('Nodes', graph.nodes());
 ```
 
+## Standard library
+
+* [graphology-generators](https://github.com/graphology/graphology-generators#readme)<br>*Graph generators (random graphs, complete graphs etc.).*
+* [graphology-hits](https://github.com/graphology/graphology-hits#readme)<br>*HITS algorithm.*
+* [graphology-centrality](https://github.com/graphology/graphology-centrality#readme)<br>*Various centrality measures (degree, betweenness etc.).*
+* [graphology-utils](https://github.com/graphology/graphology-utils#readme)<br>*Miscellaneous utils used by most of the other modules.*
+* [graphology-layout](https://github.com/graphology/graphology-layout#readme)<br>*Basic graph layouts (random, circle etc.).*
+* [graphology-operators](https://github.com/graphology/graphology-operators#readme)<br>*Graph unary & binary operators (reverse, union, intersection etc.)*
+
 ## Implementing graphology
 
-`graphology` merely is a specification so that anyone can implement it its own way if necessary while keeping the advantages of being able to use the [standard library](standard-library.md).
+`graphology` merely is a specification so that anyone can implement it its own way if necessary while keeping the advantages of being able to use the [standard library](#standard-library).
 
 Graphs are complex structures and, while we designed the reference implementation to handle most common cases with good performance, one will always be able to implement the present specifications in a more performant fashion for very specific use cases.
 
