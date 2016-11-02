@@ -70,8 +70,6 @@ By convention, you can assume that if the documentation does not tell you what a
 
 One might note that, contrary to some other libraries, `graphology` returns the node or edge on the `#.addNode` & `#.addEdge` method rather than enabling chaining methods. This was made so that the "get/has" pattern remains usable and to avoid unnecessary reads of the graph when building one:
 
-You can see an example of this pattern in the ["Creating a co-occurrence graph"](examples/co-occurrence.md) example.
-
 ## Concerning order
 
 The user should expect the `Graph` object to retain insertion order for both nodes & edges.
@@ -119,7 +117,6 @@ While the present specification doesn't cover the case of an immutable graph, it
 
 * Make all the mutating methods returns the new graph.
 * Add a boolean `#.immutable` property to the object.
-* Make sure that the `onNodeDuplicate` & `onEdgeDuplicate` options return the new graph rather than mutating it.
 * Probably disable the event system since the reference will change whenever the graph is edited.
 
 ```js
@@ -135,6 +132,6 @@ graph === updatedGraph
 graph.order
 >>> 0
 
-updatedGraph
+updatedGraph.order
 >>> 1
 ```
