@@ -81,6 +81,7 @@ graph.hasNode('Thomas');
 *Arguments*
 
 * **data** <span class="code">serialized graph|Graph</span>: serialized graph data or another Graph instance.
+* **merge** <span class="code">[boolean]</span> <span class="default">false</span>: whether to merge the imported data.
 
 ## #.importNode
 
@@ -98,6 +99,7 @@ graph.getNodeAttribute('Thomas', 'eyes');
 *Arguments*
 
 * **node** <span class="code">serialized node</span>: data of the node to import.
+* **merge** <span class="code">[boolean]</span> <span class="default">false</span>: whether to merge the imported node.
 
 ## #.importNodes
 
@@ -118,6 +120,7 @@ graph.getNodeAttribute('Eric', 'age');
 *Arguments*
 
 * **nodes** <span class="code">array</span>: array of serialized nodes.
+* **merge** <span class="code">[boolean]</span> <span class="default">false</span>: whether to merge the imported nodes.
 
 ## #.importEdge
 
@@ -141,6 +144,7 @@ graph.hasEdge('Thomas', 'Eric');
 *Arguments*
 
 * **edge** <span class="code">serialized edge</span>: data of the edge to import.
+* **merge** <span class="code">[boolean]</span> <span class="default">false</span>: whether to merge the imported edge.
 
 ## #.importEdges
 
@@ -172,6 +176,7 @@ graph.edges('Thomas');
 *Arguments*
 
 * **edges** <span class="code">array</span>: array of serialized edges.
+* **merge** <span class="code">[boolean]</span> <span class="default">false</span>: whether to merge the imported edges.
 
 
 ## #.export
