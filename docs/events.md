@@ -113,7 +113,7 @@ graph.clear();
 >>> 0, 0
 ```
 
-## nodeUpdated
+## nodeAttributesUpdated
 
 Emitted whenever the attributes of the node are updated.
 
@@ -143,7 +143,7 @@ graph.setNodeAttribute('Thomas', 'age', 54);
   * `merge`
     * **data** <span class="code">object</span>: Merged data.
 
-## edgeUpdated
+## edgeAttributesUpdated
 
 Emitted whenever the attributes of the edge are updated.
 
