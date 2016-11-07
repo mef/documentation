@@ -38,15 +38,20 @@ graph.exportEdge('T->E');
 
 **Graph**
 
-A graph is serializd as an object containing a `nodes` key & a `edges` key:
-  * <span class="code">object</span> `nodes`: containing a list of serialized nodes.
+A graph is serializd as an object containing an `attributes`, a `nodes` & an `edges` key:
+  * <span class="code">object</span> `attributes`: containing the attributes of the graph (can be omitted).
+  * <span class="code">object</span> `nodes`: containing a list of serialized nodes (can be omitted when merging).
   * <span class="code">object</span> `edges`: containing a list of serialized edges (can be omitted).
 
 ```js
 graph.addNodesFrom(['Thomas', 'Eric']);
 graph.addEdgeWithKey('T->E', 'Thomas', 'Eric', {type: 'KNOWS'});
+graph.setAttribute('name', 'My Graph');
 graph.export();
 >>> {
+  attributes: {
+    name: 'My Graph'
+  },
   nodes: [
     {key: 'Thomas'},
     {key: 'Eric'}
@@ -70,6 +75,7 @@ Imports a whole serialized graph into the graph.
 
 ```js
 graph.import({
+  attributes: {name: 'My Graph'},
   nodes: [{key: 'Thomas'}, {key: 'Eric'}],
   edges: [{source: 'Thomas', target: 'Eric'}]
 });
