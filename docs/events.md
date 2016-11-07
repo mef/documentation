@@ -113,6 +113,37 @@ graph.clear();
 >>> 0, 0
 ```
 
+## attributesUpdated
+
+Emitted whenever the attributes of the graph are updated.
+
+*Example*
+
+```js
+graph.on('attributesUpdated', function({type, meta}) {
+  console.log(type, meta);
+});
+
+graph.setAttribute('name', 'My Beautiful Graph');
+// Will trigger:
+'name', 'set', {value: 'My Beautiful Graph'}
+```
+
+*Payload*
+
+* **type** <span class="code">string</span>: type of the update, one of `set`, `replace` or `merge`.
+* **meta** <span class="code">object</span>: additional information related to the update.
+  * `set`
+    * **name** <span class="code">string</span>: edited attribute's name.
+    * **value** <span class="code">string</span>: new value.
+  * `remove`
+    * **name** <span class="code">string</span>: removed attribute's name.
+  * `replace`
+    * **before** <span class="code">object</span>: precedent attributes.
+    * **after** <span class="code">object</span>: current attributes.
+  * `merge`
+    * **data** <span class="code">object</span>: Merged data.
+
 ## nodeAttributesUpdated
 
 Emitted whenever the attributes of the node are updated.
@@ -120,7 +151,7 @@ Emitted whenever the attributes of the node are updated.
 *Example*
 
 ```js
-graph.on('nodeUpdated', function({key, type, meta}) {
+graph.on('nodeAttributesUpdated', function({key, type, meta}) {
   console.log(key, type, meta);
 });
 
@@ -137,6 +168,8 @@ graph.setNodeAttribute('Thomas', 'age', 54);
   * `set`
     * **name** <span class="code">string</span>: edited attribute's name.
     * **value** <span class="code">string</span>: new value.
+  * `remove`
+    * **name** <span class="code">string</span>: removed attribute's name.
   * `replace`
     * **before** <span class="code">object</span>: precedent attributes.
     * **after** <span class="code">object</span>: current attributes.
@@ -150,7 +183,7 @@ Emitted whenever the attributes of the edge are updated.
 *Example*
 
 ```js
-graph.on('edgeUpdated', function({key, type, meta}) {
+graph.on('edgeAttributesUpdated', function({key, type, meta}) {
   console.log(key, type, meta);
 });
 
@@ -167,6 +200,8 @@ graph.setEdgeAttribute('T->R', 'type', 'KNOWS');
   * `set`
     * **name** <span class="code">string</span>: edited attribute's name.
     * **value** <span class="code">string</span>: new value.
+  * `remove`
+    * **name** <span class="code">string</span>: removed attribute's name.
   * `replace`
     * **before** <span class="code">object</span>: precedent attributes.
     * **after** <span class="code">object</span>: current attributes.
