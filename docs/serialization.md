@@ -194,8 +194,12 @@ Exports the whole instance's data as a serialized graph.
 ```js
 graph.addNodesFrom(['Thomas', 'Eric']);
 graph.addEdgeWithKey('T->E', 'Thomas', 'Eric', {type: 'KNOWS'});
+graph.setAttribute('name', 'My Graph');
 graph.export();
 >>> {
+  attributes: {
+    name: 'My Graph'
+  },
   nodes: [
     {key: 'Thomas'},
     {key: 'Eric'}
