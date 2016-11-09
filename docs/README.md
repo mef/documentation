@@ -34,6 +34,7 @@ console.log('Nodes', graph.nodes());
 
 ## Standard library
 
+* [graphology-assertions](https://github.com/graphology/graphology-assertions#readme)<br>*Miscellaneous assertions (same nodes, same edges etc.).*
 * [graphology-centrality](https://github.com/graphology/graphology-centrality#readme)<br>*Various centrality measures (degree, betweenness etc.).*
 * [graphology-components](https://github.com/graphology/graphology-components#readme)<br>*Connected components (strong, weak etc.).*
 * [graphology-generators](https://github.com/graphology/graphology-generators#readme)<br>*Graph generators (random graphs, complete graphs etc.).*
