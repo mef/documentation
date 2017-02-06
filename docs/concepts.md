@@ -72,7 +72,7 @@ One might note that, contrary to some other libraries, `graphology` returns the 
 
 ## Concerning order
 
-The user should not expect the `Graph` to retain insertion order. It might be a side effect of the used implementation to retain insertion order but it is not guaranteed by the specification.
+The user should not expect the `Graph` to retain insertion order. It might be a side effect of the used implementation to retain an order but it is not guaranteed by the specification.
 
 ```js
 const graph = new Graph();

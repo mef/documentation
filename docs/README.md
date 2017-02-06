@@ -16,6 +16,8 @@ To install the reference implementation:
 npm install --save graphology
 ```
 
+The source of the reference implementation can be found on [this](https://github.com/graphology/graphology) github repository.
+
 ## Quick Start
 
 ```js
