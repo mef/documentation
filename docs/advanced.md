@@ -35,7 +35,7 @@ const configuration = {
   }
 };
 
-const graph = new Graph(null, {indices: configuration});
+const graph = new Graph({indices: configuration});
 ```
 
 ### Indices-related methods

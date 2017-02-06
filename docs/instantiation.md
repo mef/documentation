@@ -105,7 +105,7 @@ const generator = (function() {
   return () => id++;
 })();
 
-const graph = new Graph(null, {edgeKeyGenerator: generator});
+const graph = new Graph({edgeKeyGenerator: generator});
 
 graph.addNodesFrom(['John', 'Martha']);
 graph.addEdge('John', 'Martha');
@@ -121,7 +121,7 @@ const generator = function({undirected, source, target, attributes}) {
   return `${source}->${target}`;
 };
 
-const graph = new Graph(null, {edgeKeyGenerator: generator});
+const graph = new Graph({edgeKeyGenerator: generator});
 
 graph.addNodesFrom(['John', 'Martha']);
 graph.addEdge('John', 'Martha');

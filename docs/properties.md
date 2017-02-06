@@ -77,7 +77,7 @@ const graph = new Graph();
 graph.allowSelfLoops;
 >>> true
 
-const otherGraph = new Graph(null, {allowSelfLoops: false});
+const otherGraph = new Graph({allowSelfLoops: false});
 graph.allowSelfLoops;
 >>> false
 ```
