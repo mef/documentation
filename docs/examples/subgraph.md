@@ -1,7 +1,11 @@
-## Exemple: Subgraphs
+## Example: Subgraphs
 
 ```js
-function subgraph(graph, nodes) {
+/**
+ * Function taking a graph & returning the subgraph having the given set of
+ * nodes.
+ */
+export function subgraph(graph, nodes) {
   const sub = graph.emptyCopy(),
         nodesSet = new Set(nodes),
         edges = [];

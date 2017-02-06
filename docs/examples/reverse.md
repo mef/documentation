@@ -1,7 +1,11 @@
-## Exemple: Reversing a graph
+## Example: Reversing a graph
 
 ```js
-function reverse(graph) {
+/**
+ * Function taking a graph & creating its reverse by reversing its
+ * directed edges.
+ */
+export function reverse(graph) {
   const reversed = graph.emptyCopy();
 
   // Importing the nodes:
