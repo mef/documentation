@@ -13,9 +13,9 @@ Then you need to create a file that will be run by `mocha`:
 ```js
 // test.js
 import specs from 'graphology/specs';
-import Graph from 'my-implem';
+import Graph from 'my-custom-graphology-implementation';
 
-module.exports = specs(Graph, Graph, {map: true});
+module.exports = specs(Graph, Graph);
 ```
 
 *Arguments*
