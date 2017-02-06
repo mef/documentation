@@ -85,8 +85,8 @@ const graph = new Graph(null, {edgeKeyGenerator: generator});
 graph.addNodesFrom(['John', 'Martha']);
 graph.addEdge('John', 'Martha');
 
-graph.getEdge('John', 'Martha');
->>> '0'
+graph.edges('John', 'Martha');
+>>> ['0']
 ```
 
 *Example - Id based on edge data*
@@ -101,6 +101,6 @@ const graph = new Graph(null, {edgeKeyGenerator: generator});
 graph.addNodesFrom(['John', 'Martha']);
 graph.addEdge('John', 'Martha');
 
-graph.getEdge('John', 'Martha');
->>> 'John->Martha'
+graph.edges('John', 'Martha');
+>>> ['John->Martha']
 ```
