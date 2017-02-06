@@ -9,6 +9,7 @@
 * [Instantiation](instantiation.md)
   * [Arguments](instantiation.md#arguments)
   * [Typed constructors](instantiation.md#typed-constructors)
+  * [Static #.from method](instantiation.md#static-from-method)
 * [Properties](properties.md)
   * [#.order](properties.md#order)
   * [#.size](properties.md#size)

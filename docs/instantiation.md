@@ -1,6 +1,8 @@
 # Instantiation
 
-Instantiating a `graphology` Graph object is merely an issue of requiring an implementation and calling it with, optionally, some data & options.
+Instantiating a `graphology` Graph object is merely an issue of requiring an implementation and calling it with some options.
+
+Note that if you need to create a Graph using some serialized data or another Graph's data, you should probably check the static [#.from](#static-from-method).
 
 ```js
 import Graph from 'graphology';
@@ -8,27 +10,29 @@ import Graph from 'graphology';
 // Here you go:
 const graph = new Graph();
 
-// With some pre-existing data:
-const graph = new Graph(data);
-
 // With options:
-const graph = new Graph(null, options);
-
-// With both:
-const graph = new Graph(data, options);
+const graph = new Graph(options);
 ```
 
-## Arguments
+## Options
 
-* **data** <span class="code">[Graph|SerializedGraph]</span>: pre-existing data to give to the constructor. This data can either be an existing `Graph` instance, and in this case both nodes & edges will be imported from the given graph, or a serialized graph whose format is described [here](serialization.md#format).
-* **options** <span class="code">[object]</span>: options to customize the behavior of the graph & performance hints:
-  * **allowSelfLoops** <span class="code">[boolean]</span> <span class="default">true</span>: should the graph allow self-loops?
-  * **defaultEdgeAttributes** <span class="code">[object]</span>: default edge attributes merged with the provided ones.
-  * **defaultNodeAttributes** <span class="code">[object]</span>: default node attributes merged with the provided ones.
-  * **edgeKeyGenerator** <span class="code">[function]</span>: Function used internally by the graph to produce keys for key-less edges. By default, the graph will produce keys as UUID v4. For more information concerning the function you can provide, see [this](#edge-key-generator-function).
-  * **indices** <span class="code">[object]</span>: Options regarding index computation. For more information, see [this](./advanced.md#indices).
-  * **multi** <span class="code">[boolean]</span> <span class="default">false</span>: Should the graph allow parallel edges?
-  * **type** <span class="code">[string]</span> <span class="default">"mixed"</span>: Type of the graph. One of `directed`, `undirected` or `mixed`.
++ **allowSelfLoops** <span class="code">[boolean]</span> <span class="default">true</span>: should the graph allow self-loops?
++ **defaultEdgeAttributes** <span class="code">[object]</span>: default edge attributes merged with the provided ones.
++ **defaultNodeAttributes** <span class="code">[object]</span>: default node attributes merged with the provided ones.
++ **edgeKeyGenerator** <span class="code">[function]</span>: Function used internally by the graph to produce keys for key-less edges. By default, the graph will produce keys as UUID v4. For more information concerning the function you can provide, see [this](#edge-key-generator-function).
++ **indices** <span class="code">[object]</span>: Options regarding index computation. For more information, see [this](./advanced.md#indices).
++ **multi** <span class="code">[boolean]</span> <span class="default">false</span>: Should the graph allow parallel edges?
++ **type** <span class="code">[string]</span> <span class="default">"mixed"</span>: Type of the graph. One of `directed`, `undirected` or `mixed`.
+
+*Examples*
+
+```js
+// Creating a multi-graph with no self-loops
+const graph = new Graph({multi: true, allowSelfLoops: false});
+
+// Creating a graph with default node attributes
+const graph = new Graph({defaultNodeAttributes: {size: 0}});
+```
 
 ## Typed constructors
 
@@ -59,6 +63,27 @@ DirectedGraph
 MultiUndirectedGraph
 (...)
 ```
+
+## Static #.from method
+
+Alternatively, one can create a graph from a serialized graph or another `Graph` instance using the static `#.from` method:
+
+*Example*
+
+```js
+const graph = Graph.from(data);
+
+// Need some options?
+const graph = Graph.from(data, options);
+
+// Also works with typed constructors
+const graph = UndirectedGraph.from(data);
+```
+
+*Arguments*
+
+* **data** <span class="code">Graph|SerializedGraph</span>: pre-existing data to give to the constructor. This data can either be an existing `Graph` instance, and in this case both nodes & edges will be imported from the given graph, or a serialized graph whose format is described [here](serialization.md#format).
+* **options** <span class="code">[object]</span>: options passed to the created graph.
 
 ---
 
