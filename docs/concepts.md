@@ -72,18 +72,18 @@ One might note that, contrary to some other libraries, `graphology` returns the 
 
 ## Concerning order
 
-The user should expect the `Graph` object to retain insertion order for both nodes & edges.
+The user should not expect the `Graph` to retain insertion order. It might be a side effect of the used implementation to retain insertion order but it is not guaranteed by the specification.
 
 ```js
 const graph = new Graph();
 graph.addNode('First Node');
 graph.addNode('Second Node');
 
+// Won't necessarily print 'First Node' then 'Second Node'
+// Might be the other way around.
 graph.nodes().forEach(node => {
   console.log(node);
 });
->>> 'First Node'
->>> 'Second Node'
 ```
 
 ## Polling edges
