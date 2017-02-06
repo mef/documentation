@@ -93,7 +93,7 @@ Note that two different ways are generally accessible to you when targeting edge
 * Either you can provide their key.
 * Or you can use their source & target to find them.
 
-Note however that, since graph instances can support parallel edges, you might sometimes want to avoid using the second way since it will always only target the first matching edge (in insertion order).
+Note however that, since graph instances can support parallel edges, you might sometimes want to avoid using the second way since it will throw if you handle a multi-graph.
 
 ```js
 cons graph = new Graph();
