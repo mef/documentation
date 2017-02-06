@@ -30,7 +30,7 @@ const graph = new Graph(data, options);
   * **multi** <span class="code">[boolean]</span> <span class="default">false</span>: Should the graph allow parallel edges?
   * **type** <span class="code">[string]</span> <span class="default">"mixed"</span>: Type of the graph. One of `directed`, `undirected` or `mixed`.
 
-## Alternative constructors
+## Typed constructors
 
 Rather than providing tedious options to the constructor, one can use one of the many handy constructors provided by the implementation to create the desired graph:
 

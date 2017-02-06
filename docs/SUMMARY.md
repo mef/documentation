@@ -8,7 +8,7 @@
 * [Concepts](concepts.md)
 * [Instantiation](instantiation.md)
   * [Arguments](instantiation.md#arguments)
-  * [Alternative constructors](instantiation.md#alternative-constructors)
+  * [Typed constructors](instantiation.md#typed-constructors)
 * [Properties](properties.md)
   * [#.order](properties.md#order)
   * [#.size](properties.md#size)
