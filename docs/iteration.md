@@ -103,7 +103,6 @@ graph.countInEdges('Thomas');
 #.outboundEdges
 #.directedEdges
 #.undirectedEdges
-#.selfLoops
 
 #.countEdges
 #.countInEdges
@@ -112,7 +111,6 @@ graph.countInEdges('Thomas');
 #.countOutboundEdges
 #.countDirectedEdges
 #.countUndirectedEdges
-#.countSelfLoops
 ```
 
 **Arguments**
