@@ -55,33 +55,6 @@ graph.hasEdge('Clarice', 'John');
 
 `#.hasDirectedEdge`, `#.hasUndirectedEdge`
 
-## #.getEdge
-
-Returns the first matching edge linking the given source & target (starting with directed edges & then with undirected ones), or `undefined` if it does not exist.
-
-*Example*
-
-```js
-graph.addNode('Timothy');
-graph.addNode('Clarice');
-graph.addEdgeWithKey('C->T', 'Clarice', 'Timothy');
-
-graph.getEdge('Clarice', 'Timothy');
->>> 'C->T'
-
-graph.getEdge('Clarice', 'Franck');
->>> undefined
-```
-
-*Arguments*
-
-* **source** <span class="type">any</span>: source of the edge to find.
-* **target** <span class="type">any</span>: target of the edge to find.
-
-*Variants*
-
-`#.getDirectedEdge`, `#.getUndirectedEdge`
-
 ## #.degree
 
 Returns the degree of the given node.
