@@ -44,6 +44,7 @@ console.log('Nodes', graph.nodes());
 * [graphology-hits](https://github.com/graphology/graphology-hits#readme)<br>*HITS algorithm.*
 * [graphology-layout](https://github.com/graphology/graphology-layout#readme)<br>*Basic graph layouts (random, circle etc.).*
 * [graphology-operators](https://github.com/graphology/graphology-operators#readme)<br>*Graph unary & binary operators (reverse, union, intersection etc.)*
+* [graphology-shortest-path](https://github.com/graphology/graphology-shortest-path#readme)<br>*Shortest path functions (Dijkstra, A&ast; etc.)*
 * [graphology-utils](https://github.com/graphology/graphology-utils#readme)<br>*Miscellaneous utils used by most of the other modules.*
 
 ## Implementing graphology
