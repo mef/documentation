@@ -43,6 +43,7 @@ console.log('Nodes', graph.nodes());
 * [graphology-gexf](https://github.com/graphology/graphology-gexf#readme)<br>*Parsers & writers for the GEXF file format.*
 * [graphology-hits](https://github.com/graphology/graphology-hits#readme)<br>*HITS algorithm.*
 * [graphology-layout](https://github.com/graphology/graphology-layout#readme)<br>*Basic graph layouts (random, circle etc.).*
+* [graphology-layout-forceatlas2](https://github.com/graphology/graphology-layout-forceatlas2#readme)<br>*ForceAtlas2 layout algorithm.*
 * [graphology-operators](https://github.com/graphology/graphology-operators#readme)<br>*Graph unary & binary operators (reverse, union, intersection etc.)*
 * [graphology-shortest-path](https://github.com/graphology/graphology-shortest-path#readme)<br>*Shortest path functions (Dijkstra, A&ast; etc.)*
 * [graphology-utils](https://github.com/graphology/graphology-utils#readme)<br>*Miscellaneous utils used by most of the other modules.*
