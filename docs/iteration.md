@@ -72,9 +72,6 @@ graph.edges();
 graph.edges('Thomas');
 >>> ['T->R', 'T->E', 'C->T']
 
-graph.edges(['Rosaline', 'Catherine']);
->>> ['T->R', 'C->T', 'R->C']
-
 graph.edges('John', 'Daniel');
 >>> ['J->D1', 'J->D2']
 
@@ -108,9 +105,7 @@ graph.countInEdges('Thomas');
 1. **None**: iterate over every edge.
 2. **Using a node's key**: will iterate over the node's relevant attached edges.
   * **node** <span class="code">any</span>: the related node's key.
-3. **Using a [bunch](concept.md#bunches) of nodes**: will iterate over the union of the nodes' relevant attached edge.
-  * **bunch** <span class="code">bunch</span>: bunch of related nodes.
-4. **Using source & target**: will iterate over the relevant edges going from source to target.
+3. **Using source & target**: will iterate over the relevant edges going from source to target.
   * **source** <span class="code">any</span>: the source node's key.
   * **target** <span class="code">any</span>: the target node's key.
 
@@ -143,9 +138,6 @@ graph.neighbors('Thomas', 'Rosaline');
 graph.neighbors('Thomas');
 >>> ['Rosaline', 'Emmett', 'Catherine']
 
-graph.neighbors(['Rosaline', 'Thomas']);
->>> ['Emmett', 'Catherine']
-
 // Using the counting methods
 graph.countNeighbors('Thomas');
 >>> 3
@@ -171,8 +163,6 @@ graph.countNeighbors('Thomas');
 
 1. **Using a node's key**: will iterate over the node's relevant neighbors.
   * **node** <span class="code">any</span>: the node's key.
-2. **Using a [bunch](concept.md#bunches) of nodes**: will iterate over the union of the nodes' relevant neighbors.
-  * **bunch** <span class="code">bunch</span>: bunch of related nodes.
-3. **Using two nodes' keys**: will return whether the two given nodes are neighbors.
+2. **Using two nodes' keys**: will return whether the two given nodes are neighbors.
   * **node1** <span class="code">any</span>: first node.
   * **node2** <span class="code">any</span>: second node.
