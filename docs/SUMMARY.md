@@ -7,7 +7,7 @@
   * [2. Creating a subgraph](examples/subgraph.md)
 * [Concepts](concepts.md)
 * [Instantiation](instantiation.md)
-  * [Arguments](instantiation.md#arguments)
+  * [Options](instantiation.md#options)
   * [Typed constructors](instantiation.md#typed-constructors)
   * [Static #.from method](instantiation.md#static-from-method)
 * [Properties](properties.md)
