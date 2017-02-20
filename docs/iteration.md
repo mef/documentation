@@ -11,7 +11,7 @@ Using a `Graph` instance, it is possible to iterate on the three following thing
 The library basically proposes two ways to iterate:
 
 * Methods returning arrays of keys.
-* Counting methods when the implementation is able to return a number without creating an array.
+* Methods creating JavaScript [iterators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators) for lazy consumption (yet to be implemented!).
 
 **On what do we iterate?**
 
@@ -115,10 +115,6 @@ graph.neighbors('Thomas', 'Rosaline');
 // Using the array-returning methods:
 graph.neighbors('Thomas');
 >>> ['Rosaline', 'Emmett', 'Catherine']
-
-// Using the counting methods (useful only with multi graphs obviously)
-graph.countNeighbors('Thomas');
->>> 3
 ```
 
 **Methods**
@@ -129,12 +125,6 @@ graph.countNeighbors('Thomas');
 #.outNeighbors
 #.directedNeighbors
 #.undirectedNeighbors
-
-#.countNeighbors
-#.countInNeighbors
-#.countOutNeighbors
-#.countDirectedNeighbors
-#.countUndirectedNeighbors
 ```
 
 **Arguments**
