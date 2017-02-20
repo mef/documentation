@@ -44,10 +44,6 @@ graph.nodes();
 
 1. **None**: iterate over every node.
 
-**Getting the total number of nodes**
-
-You can simply use the [`#.order`](properties.md#order) property.
-
 ## Edges
 
 These methods iterate over the graph instance's edges.
@@ -74,14 +70,6 @@ graph.edges('Thomas');
 
 graph.edges('John', 'Daniel');
 >>> ['J->D1', 'J->D2']
-
-// Using the counting methods
-graph.countEdges('Thomas');
->>> 3
-graph.countOutEdges('Thomas');
->>> 2
-graph.countInEdges('Thomas');
->>> 1
 ```
 
 **Methods**
@@ -92,12 +80,6 @@ graph.countInEdges('Thomas');
 #.outEdges
 #.directedEdges
 #.undirectedEdges
-
-#.countEdges
-#.countInEdges
-#.countOutEdges
-#.countDirectedEdges
-#.countUndirectedEdges
 ```
 
 **Arguments**
@@ -108,10 +90,6 @@ graph.countInEdges('Thomas');
 3. **Using source & target**: will iterate over the relevant edges going from source to target.
   * **source** <span class="code">any</span>: the source node's key.
   * **target** <span class="code">any</span>: the target node's key.
-
-**Getting the total number of edges**
-
-You can simply use the [`#.size`](properties.md#size) property.
 
 ## Neighbors
 
@@ -138,7 +116,7 @@ graph.neighbors('Thomas', 'Rosaline');
 graph.neighbors('Thomas');
 >>> ['Rosaline', 'Emmett', 'Catherine']
 
-// Using the counting methods
+// Using the counting methods (useful only with multi graphs obviously)
 graph.countNeighbors('Thomas');
 >>> 3
 ```
