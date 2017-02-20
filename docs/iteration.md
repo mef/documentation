@@ -17,12 +17,6 @@ The library basically proposes two ways to iterate:
 
 Note that the methods will always iterate on nodes' & edges' keys and nothing more. If you need to access to attributes during iteration, you can do so using the [attributes](attributes.md) methods.
 
-**Difference between directed iterators**
-
-The difference between, for instance, the `#.outEdges` & the `#.outboundEdges` iterator is that the former will only traverse directed edges while the latter will traverse both directed edges & undirected edges facing towards this direction so that all edges are traversed, and never twice.
-
-This is very useful when performing operations such as creating a subgraph etc.
-
 ## Nodes
 
 Those methods iterate over the graph instance's nodes.
@@ -99,16 +93,12 @@ graph.countInEdges('Thomas');
 #.edges
 #.inEdges
 #.outEdges
-#.inboundEdges
-#.outboundEdges
 #.directedEdges
 #.undirectedEdges
 
 #.countEdges
 #.countInEdges
 #.countOutEdges
-#.countInboundEdges
-#.countOutboundEdges
 #.countDirectedEdges
 #.countUndirectedEdges
 ```
@@ -167,14 +157,14 @@ graph.countNeighbors('Thomas');
 #.neighbors
 #.inNeighbors
 #.outNeighbors
-#.inboundNeighbors
-#.outboundNeighbors
+#.directedNeighbors
+#.undirectedNeighbors
 
 #.countNeighbors
 #.countInNeighbors
 #.countOutNeighbors
-#.countInboundNeighbors
-#.countOutboundNeighbors
+#.countDirectedNeighbors
+#.countUndirectedNeighbors
 ```
 
 **Arguments**

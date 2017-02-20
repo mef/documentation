@@ -2,8 +2,8 @@
 
 ```js
 /**
- * Function taking a graph & returning the subgraph having the given set of
- * nodes.
+ * Function taking a directed graph & returning the subgraph having the given
+ * set of nodes.
  */
 export function subgraph(graph, nodes) {
   const sub = graph.emptyCopy(),
@@ -18,7 +18,7 @@ export function subgraph(graph, nodes) {
 
     // An edge is deemed relevant if both its end are attached to
     // one of the subgraph's nodes.
-    const relevantEdges = graph.outboundEdges(node).filter(edge => {
+    const relevantEdges = graph.outEdges(node).filter(edge => {
       const target = graph.opposite(node, edge);
 
       return nodeSet.has(target);
