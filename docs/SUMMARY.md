@@ -19,6 +19,7 @@
 * [Read](read.md)
   * [#.hasNode](read.md#hasnode)
   * [#.hasEdge](read.md#hasedge)
+  * [#.edge](read.md#edge)
   * [#.degree](read.md#degree)
   * [#.source](read.md#source)
   * [#.target](read.md#target)

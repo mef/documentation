@@ -55,6 +55,36 @@ graph.hasEdge('Clarice', 'John');
 
 `#.hasDirectedEdge`, `#.hasUndirectedEdge`
 
+## #.edge
+
+Returns the key of the edge between given source & target or `undefined` if such an edge does not exist.
+
+Note that this method will throw if either source or target is not found in the graph.
+
+In addition, this method won't work on a multi graph and will throw because the graph cannot know which edge to return since there might be multiple edges between source & target.
+
+*Example*
+
+```js
+graph.addNodesFrom(['Timothy', 'Clarice', 'Olivia']);
+graph.addEdgeWithKey('C->T' 'Clarice', 'Timothy');
+
+graph.edge('Clarice', 'Timothy');
+>>> 'C->T'
+
+graph.edge('Clarice', 'Olivia');
+>>> undefined
+```
+
+*Arguments*
+
+* **source** <span class="type">any</span>: source of the edge to find.
+* **target** <span class="type">any</span>: target of the edge to find.
+
+*Variants*
+
+`#.directedEdge`, `#.undirectedEdge`
+
 ## #.degree
 
 Returns the degree of the given node.

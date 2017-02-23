@@ -14,6 +14,30 @@ This said, the user should keep in mind that the graph have the same quirks as a
 * Numbers as keys will be coerced to strings.
 * Giving objects as keys will result in a `[object Object]` key etc.
 
+## Mixed graphs & type precedence
+
+In a mixed graph, one should consider that directed edges will always take precedence over the undirected ones.
+
+Use the typed methods to solve the ambiguity.
+
+```js
+import Graph from 'graphology';
+
+const graph = new Graph();
+graph.addNodesFrom(1, 2, 3);
+
+// This will add a directed edge
+graph.addEdge(1, 2);
+// Same as:
+graph.addDirectedEdge(1, 2);
+
+// This will add an undirected edge
+graph.addUndirectedEdge(1, 2);
+
+// So, for instance, if you need to target the undirected edge
+graph.setUndirectedEdgeAttribute(1, 2, 'type', 'LIKES');
+```
+
 ## Errors
 
 Rather than failing silently, `graphology` API will often throw errors to notify the developer that something inconsistent was performed so they can fix their code.
