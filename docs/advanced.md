@@ -8,62 +8,28 @@ But, since this part is likely to be implementation-related rather than enforced
 
 ## Reference implementation
 
-The reference `Graph` implementation computes a single index called `structure`.
+The reference `Graph` implementation only computes a `structure` index which stores neighbors & related edges in a sparse matrix.
 
-By default, to avoid useless memory consumption, those indices are not computed before they are needed (when iterating on a node's neighbors, for instance).
-
-But one remains free to customize the indices behavior to better fit their needs.
-
-To customize an index' behavior, one must provide some configuration to the graph thusly:
-
-```js
-{
-  lazy: false
-}
-```
-
-* **lazy** <span class="code">[boolean]</span> <span class="default">false</span>: Should the index be computed ahead of time or should it be computed only when it becomes necessary?
-
-### Example
-
-Let's customize our graph indices' generation:
-
-```js
-const configuration = {
-  structure: {
-    lazy: true
-  }
-};
-
-const graph = new Graph({indices: configuration});
-```
+Note that, to save some memory sometimes, this index is lazy and will only be computed when necessary (in the case of a multi graph, it might never be computed, for instance).
 
 ### Indices-related methods
 
 #### #.computeIndex
 
-Forces the computation of the desired index.
+Forces the computation of the index.
 
 *Example*
 
 ```js
-graph.computeIndex('structure');
+graph.computeIndex();
 ```
-
-*Arguments*
-
-* **name** <span class="code">string</span>: name of the index to compute.
 
 #### #.clearIndex
 
-Release the desired index from memory.
+Release the index from memory.
 
 *Example*
 
 ```js
-graph.clearIndex('structure');
+graph.clearIndex();
 ```
-
-*Arguments*
-
-* **name** <span class="code">string</span>: name of the index to clear.
