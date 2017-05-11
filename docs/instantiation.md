@@ -19,7 +19,7 @@ const graph = new Graph(options);
 + **allowSelfLoops** <span class="code">[boolean]</span> <span class="default">true</span>: should the graph allow self-loops?
 + **defaultEdgeAttributes** <span class="code">[object]</span>: default edge attributes merged with the provided ones.
 + **defaultNodeAttributes** <span class="code">[object]</span>: default node attributes merged with the provided ones.
-+ **edgeKeyGenerator** <span class="code">[function]</span>: Function used internally by the graph to produce keys for key-less edges. By default, the graph will produce keys as UUID v4. For more information concerning the function you can provide, see [this](#edge-key-generator-function).
++ **edgeKeyGenerator** <span class="code">[function]</span>: Function used internally by the graph to produce keys for key-less edges. By default, the graph will produce boring internal incremental keys for you. For more information concerning the function you can provide, see [this](#edge-key-generator-function).
 + **indices** <span class="code">[object]</span>: Options regarding index computation. For more information, see [this](./advanced.md#indices).
 + **multi** <span class="code">[boolean]</span> <span class="default">false</span>: Should the graph allow parallel edges?
 + **type** <span class="code">[string]</span> <span class="default">"mixed"</span>: Type of the graph. One of `directed`, `undirected` or `mixed`.
