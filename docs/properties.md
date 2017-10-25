@@ -36,6 +36,42 @@ graph.size;
 >>> 1
 ```
 
+## #.directedSize
+
+Number of directed edges in the graph.
+
+*Example*
+
+```js
+const graph = new Graph();
+
+graph.addNode('John');
+graph.addNode('Jack');
+
+graph.addDirectedEdge('John', 'Jack');
+
+graph.directedSize;
+>>> 1
+```
+
+## #.undirectedSize
+
+Number of undirected edges in the graph.
+
+*Example*
+
+```js
+const graph = new Graph();
+
+graph.addNode('John');
+graph.addNode('Jack');
+
+graph.addUndirectedEdge('John', 'Jack');
+
+graph.undirectedSize;
+>>> 1
+```
+
 ## #.type
 
 Type of the graph. One of `mixed`, `directed` or `undirected`.

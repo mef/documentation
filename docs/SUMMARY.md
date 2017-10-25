@@ -13,6 +13,8 @@
 * [Properties](properties.md)
   * [#.order](properties.md#order)
   * [#.size](properties.md#size)
+  * [#.directedSize](properties.md#directedsize)
+  * [#.undirectedSize](properties.md#undirectedsize)
   * [#.type](properties.md#type)
   * [#.multi](properties.md#multi)
   * [#.allowSelfLoops](properties.md#allowselfloops)
