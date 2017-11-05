@@ -131,7 +131,7 @@ graph.setAttribute('name', 'My Beautiful Graph');
 
 *Payload*
 
-* **type** <span class="code">string</span>: type of the update, one of `set`, `replace` or `merge`.
+* **type** <span class="code">string</span>: type of the update, one of `set`, `remove`, `replace` or `merge`.
 * **meta** <span class="code">object</span>: additional information related to the update.
   * `set`
     * **name** <span class="code">string</span>: edited attribute's name.
@@ -163,7 +163,7 @@ graph.setNodeAttribute('Thomas', 'age', 54);
 *Payload*
 
 * **key** <span class="code">any</span>: the updated node.
-* **type** <span class="code">string</span>: type of the update, one of `set`, `replace` or `merge`.
+* **type** <span class="code">string</span>: type of the update, one of `set`, `remove`, `replace` or `merge`.
 * **meta** <span class="code">object</span>: additional information related to the update.
   * `set`
     * **name** <span class="code">string</span>: edited attribute's name.
@@ -195,7 +195,7 @@ graph.setEdgeAttribute('T->R', 'type', 'KNOWS');
 *Payload*
 
 * **key** <span class="code">any</span>: the updated edge.
-* **type** <span class="code">string</span>: type of the update, one of `set`, `replace` or `merge`.
+* **type** <span class="code">string</span>: type of the update, one of `set`, `remove`, `replace` or `merge`.
 * **meta** <span class="code">object</span>: additional information related to the update.
   * `set`
     * **name** <span class="code">string</span>: edited attribute's name.
