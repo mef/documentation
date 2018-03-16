@@ -10,5 +10,6 @@
 * [graphology-layout-forceatlas2](https://github.com/graphology/graphology-layout-forceatlas2#readme)<br>*ForceAtlas2 layout algorithm.*
 * [graphology-metrics](https://github.com/graphology/graphology-metrics#readme)<br>*Modularity, density, centrality etc.*
 * [graphology-operators](https://github.com/graphology/graphology-operators#readme)<br>*Graph unary & binary operators (reverse, union, intersection etc.)*
+* [graphology-pagerank](https://github.com/graphology/graphology-pagerank#readme)<br>*Pagerank algorithm.*
 * [graphology-shortest-path](https://github.com/graphology/graphology-shortest-path#readme)<br>*Shortest path functions (Dijkstra, A&ast; etc.)*
 * [graphology-utils](https://github.com/graphology/graphology-utils#readme)<br>*Miscellaneous utils used by most of the other modules.*
