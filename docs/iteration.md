@@ -78,6 +78,8 @@ graph.edges('John', 'Daniel');
 #.edges
 #.inEdges
 #.outEdges
+#.inboundEdges (in + undirected)
+#.outboundEdges (out + undirected)
 #.directedEdges
 #.undirectedEdges
 ```
@@ -123,6 +125,8 @@ graph.neighbors('Thomas');
 #.neighbors
 #.inNeighbors
 #.outNeighbors
+#.inboundNeighbors (in + undirected)
+#.outboundNeighbors (out + undirected)
 #.directedNeighbors
 #.undirectedNeighbors
 ```
