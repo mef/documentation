@@ -107,27 +107,6 @@ graph.getNodeAttribute('Thomas', 'eyes');
 * **node** <span class="code">serialized node</span>: data of the node to import.
 * **merge** <span class="code">[boolean]</span> <span class="default">false</span>: whether to merge the imported node.
 
-## #.importNodes
-
-Imports a list of serialized nodes into the graph.
-
-*Example*
-
-```js
-graph.importNodes([
-  {key: 'Thomas', attributes: {age: 7}},
-  {key: 'Eric', attributes: {age: 45}}
-]);
-
-graph.getNodeAttribute('Eric', 'age');
->>> 45
-```
-
-*Arguments*
-
-* **nodes** <span class="code">array</span>: array of serialized nodes.
-* **merge** <span class="code">[boolean]</span> <span class="default">false</span>: whether to merge the imported nodes.
-
 ## #.importEdge
 
 Imports a single serialized edge into the graph.
@@ -151,39 +130,6 @@ graph.hasEdge('Thomas', 'Eric');
 
 * **edge** <span class="code">serialized edge</span>: data of the edge to import.
 * **merge** <span class="code">[boolean]</span> <span class="default">false</span>: whether to merge the imported edge.
-
-## #.importEdges
-
-Imports a list of serialized edges into the graph.
-
-*Example*
-
-```js
-graph.addNodesFrom(['Thomas', 'Eric', 'John']);
-graph.importEdges([
-  {
-    key:'T->E',
-    source: 'Thomas',
-    target: 'Eric',
-    attributes: {type: 'KNOWS'}
-  },
-  {
-    key:'T->J',
-    source: 'Thomas',
-    target: 'John',
-    attributes: {type: 'KNOWS'}
-  }
-]);
-
-graph.edges('Thomas');
->>> ['T->E', 'T->J']
-```
-
-*Arguments*
-
-* **edges** <span class="code">array</span>: array of serialized edges.
-* **merge** <span class="code">[boolean]</span> <span class="default">false</span>: whether to merge the imported edges.
-
 
 ## #.export
 
@@ -228,36 +174,6 @@ graph.exportNode('Thomas');
 >>> {key: 'Thomas', attributes: {age: 34}}
 ```
 
-## #.exportNodes
-
-Exports every node or only a bunch of nodes from the graph.
-
-*Example*
-
-```js
-graph.addNodesFrom({
-  Thomas: {age: 34},
-  Martha: {age: 26}
-});
-
-graph.exportNodes();
->>> [
-  {key: 'Thomas', attributes: {age: 34}},
-  {key: 'Eric', attributes: {age: 26}}
-]
-
-graph.exportNodes(['Thomas']);
->>> [
-  {key: 'Thomas', attributes: {age: 34}},
-]
-```
-
-*Arguments*
-
-1. **None**: exporting every node.
-2. **Bunch of nodes**: exporting the given bunch.
-  * **nodes** <span class="code">[bunch]</span>: bunch of nodes to export.
-
 ## #.exportEdge
 
 Exports a single edge from the graph.
@@ -276,131 +192,3 @@ graph.exportEdge('T->M');
   attributes: {type: 'KNOWS'}
 }
 ```
-
-## #.exportEdges
-
-Exports every edge or only a bunch of edges from the graph.
-
-*Example*
-
-```js
-graph.addNodesFrom(['Thomas', 'Martha', 'Eric']);
-graph.addEdgeWithKey('T->M', 'Thomas', 'Martha', {type: 'KNOWS'});
-graph.addEdgeWithKey('M->E', 'Martha', 'Eric', {type: 'KNOWS'});
-
-graph.exportEdges();
->>> [
-  {
-    key: 'T->M',
-    source: 'Thomas',
-    target: 'Martha',
-    attributes: {type: 'KNOWS'}
-  },
-  {
-    key: 'M->E',
-    source: 'Martha',
-    target: 'Eric'
-  }
-]
-
-graph.exportEdges(['T->M']);
->>> [
-  {
-    key: 'T->M',
-    source: 'Thomas',
-    target: 'Martha',
-    attributes: {type: 'KNOWS'}
-  }
-]
-```
-
-*Arguments*
-
-1. **None**: exporting every edge.
-2. **Bunch of edges**: exporting the given bunch.
-  * **edges** <span class="code">[bunch]</span>: bunch of edges to export.
-
-## #.exportDirectedEdges
-
-Exports every directed edge or only the directed edges in the provided bunch from the graph.
-
-*Example*
-
-```js
-graph.addNodesFrom(['Thomas', 'Martha', 'Eric']);
-graph.addEdgeWithKey('T->M', 'Thomas', 'Martha', {type: 'KNOWS'});
-graph.addEdgeWithKey('M->E', 'Martha', 'Eric', {type: 'KNOWS'});
-graph.addUndirectedEdgeWithKey('A', 'Thomas', 'Eric');
-
-graph.exportDirectedEdges();
->>> [
-  {
-    key: 'T->M',
-    source: 'Thomas',
-    target: 'Martha',
-    attributes: {type: 'KNOWS'}
-  },
-  {
-    key: 'M->E',
-    source: 'Martha',
-    target: 'Eric'
-  }
-]
-
-// Undirected edges are filtered
-graph.exportDirectedEdges(['T->M', 'A']);
->>> [
-  {
-    key: 'T->M',
-    source: 'Thomas',
-    target: 'Martha',
-    attributes: {type: 'KNOWS'}
-  }
-]
-```
-
-*Arguments*
-
-1. **None**: exporting every edge.
-2. **Bunch of edges**: exporting the given bunch.
-  * **edges** <span class="code">[bunch]</span>: bunch of edges to export (undirected will be filtered).
-
-## #.exportUndirectedEdges
-
-Exports every undirected edge or only the undirected edges in the provided bunch from the graph.
-
-*Example*
-
-```js
-graph.addNodesFrom(['Thomas', 'Martha', 'Eric']);
-graph.addEdgeWithKey('T->M', 'Thomas', 'Martha', {type: 'KNOWS'});
-graph.addEdgeWithKey('M->E', 'Martha', 'Eric', {type: 'KNOWS'});
-graph.addUndirectedEdgeWithKey('A', 'Thomas', 'Eric');
-
-graph.exportUndirectedEdges();
->>> [
-  {
-    key: 'A',
-    source: 'Thomas',
-    target: 'Eric',
-    undirected: true
-  }
-]
-
-// Directed edges are filtered
-graph.exportUndirectedEdges(['A', 'T->M']);
->>> [
-  {
-    key: 'A',
-    source: 'Thomas',
-    target: 'Eric',
-    undirected: true
-  }
-]
-```
-
-*Arguments*
-
-1. **None**: exporting every edge.
-2. **Bunch of edges**: exporting the given bunch.
-  * **edges** <span class="code">[bunch]</span>: bunch of edges to export (directed will be filtered).

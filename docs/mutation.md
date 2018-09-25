@@ -50,33 +50,6 @@ graph.getNodeAttributes('John');
 * **node** <span class="code">any</span>: the node's key.
 * **attributes** <span class="code">object</span>: the node's initial attributes or attributes to merge with the already existing ones.
 
-## #.addNodesFrom
-
-Adds a bunch of nodes at once. For precisions about what a bunch can be (array, set etc.), read [this](concepts.md#bunches).
-
-*Example*
-
-```js
-// Add some nodes from an array
-graph.addNodesFrom(['John', 'Martha']);
-
-graph.nodes();
->>> ['John', 'Martha']
-
-// Add nodes from an object
-graph.addNodesFrom({John: {age: 34}, Martha: {age: 32}});
-
-graph.nodes();
->>> ['John', 'Martha']
-
-graph.getNodeAttribute('John', 'age');
->>> 34
-```
-
-*Arguments*
-
-* **bunch** <span class="code">bunch</span>: bunch of nodes to add.
-
 ## #.addEdge
 
 Adds a single directed edge if the graph is `directed` or `mixed`, or an undirected edge if the graph is `undirected` and returns the edge.
@@ -250,31 +223,6 @@ graph.dropNode('Martha');
 
 * **node** <span class="code">any</span>: the node to drop.
 
-## #.dropNodes
-
-Drops every node or a [bunch](concepts.md#bunches) of nodes & all their attached edges from the graph.
-
-Basically, without arguments, `#.dropNodes` is identical to `#.clear`.
-
-*Example*
-
-```js
-graph.addNode('John');
-graph.addNode('Martha');
-
-// Dropping a bunch of nodes
-graph.dropNodes(['John', 'Martha']);
-
-// Dropping every node
-graph.dropNodes();
-```
-
-*Arguments*
-
-1. **None**: dropping every node.
-2. **Using a bunch**: dropping the provided nodes.
-  * **bunch** <span class="code">bunch</span>: the nodes to drop.
-
 ## #.dropEdge
 
 Drops a single edge from the graph.
@@ -299,39 +247,6 @@ graph.dropEdge('John', 'Martha');
 1. Using the key:
   * **edge** <span class="code">any</span>: the edge to drop.
 2. Using the source & target:
-  * **source** <span class="code">any</span>: source node of the edge to drop.
-  * **target** <span class="code">any</span>: target node of the edge to drop.
-
-## #.dropEdges
-
-Drops every edge or a [bunch](concepts.md#bunches) of edges from the graph, or all the edges related to the given source & target.
-
-*Example*
-
-```js
-graph.addNode('John');
-graph.addNode('Martha');
-graph.addNode('Catherine');
-
-const johnMartha = graph.addEdge('John', 'Martha');
-const johnCatherine = graph.addEdge('John', 'Catherine');
-
-// Dropping every edge
-graph.dropEdges();
-
-// Dropping a bunch of edges
-graph.dropEdges([johnMartha, johnCatherine]);
-
-// Dropping all the edges between John & Martha
-graph.dropEdges('John', 'Martha');
-```
-
-*Arguments*
-
-1. **None**: Dropping every edge.
-2. **Using a bunch**:
-  * **edge** <span class="code">bunch</span>: bunch of edges to drop.
-3. **Using the source & target**:
   * **source** <span class="code">any</span>: source node of the edge to drop.
   * **target** <span class="code">any</span>: target node of the edge to drop.
 
