@@ -2,9 +2,6 @@
 
 * [Introduction](README.md)
 * [Standard library](standard-library.md)
-* [Examples](examples.md)
-  * [1. Reversing a graph](examples/reverse.md)
-  * [2. Creating a subgraph](examples/subgraph.md)
 * [Concepts](concepts.md)
 * [Instantiation](instantiation.md)
   * [Options](instantiation.md#options)
