@@ -357,3 +357,26 @@ console.log(graph.order, graph.size);
 graph.hasNode('John');
 >>> false
 ```
+
+## #.clearEdges
+
+Drop every every edge from the graph, keeping only nodes.
+
+*Example*
+
+```js
+graph.addNode('John');
+graph.addNode('Jack');
+graph.addEdge('John', 'Jack');
+
+console.log(graph.order, graph.size);
+>>> 2, 1
+
+graph.clearEdges();
+
+console.log(graph.order, graph.size);
+>>> 2, 0
+
+graph.hasEdge('John', 'Jack');
+>>> false
+```

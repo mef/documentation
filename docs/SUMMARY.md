@@ -46,6 +46,7 @@
   * [#.dropEdge](mutation.md#dropedge)
   * [#.dropEdges](mutation.md#dropedges)
   * [#.clear](mutation.md#clear)
+  * [#.clearEdges](mutation.md#clearedges)
 * [Attributes](attributes.md)
   * [Graph](attributes.md#graph)
     * [#.getAttribute](attributes.md#getattribute)
