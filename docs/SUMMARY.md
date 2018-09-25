@@ -85,6 +85,7 @@
   * [nodeDropped](events.md#nodedropped)
   * [edgeDropped](events.md#edgedropped)
   * [cleared](events.md#cleared)
+  * [edgesCleared](events.md#edgescleared)
   * [attributesUpdated](events.md#attributesupdated)
   * [nodeAttributesUpdated](events.md#nodeattributesupdated)
   * [edgeAttributesUpdated](events.md#edgeattributesupdated)

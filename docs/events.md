@@ -99,7 +99,7 @@ graph.dropEdge('T->R');
 
 ## cleared
 
-Emitted whenever the graph is cleared when using the [`#.clear`](mutations.md#clear) or the [`#.dropNodes`](mutations.md#dropnodes) (without arguments) method. Note that when using this method, the `nodeDropped` & the `edgeDropped` won't be emitted.
+Emitted whenever the graph is cleared when using the [`#.clear`](mutations.md#clear) method. Note that when using this method, the `nodeDropped` & the `edgeDropped` events won't be emitted.
 
 *Example*
 
@@ -111,6 +111,22 @@ graph.on('cleared', function() {
 graph.clear();
 // Will trigger:
 >>> 0, 0
+```
+
+## edgesCleared
+
+Emitted whenever the graph is cleared of its edges when using the [`#.clearEdges`](mutations.md#clearedges) method. Note that when using this method the `edgeDropped` events won't be emitted.
+
+*Example*
+
+```js
+graph.on('edgesCleared', function() {
+  console.log(graph.order, graph.size);
+});
+
+graph.clearEdges();
+// Will trigger:
+>>> 45, 0
 ```
 
 ## attributesUpdated
