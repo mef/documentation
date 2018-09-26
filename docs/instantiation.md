@@ -17,8 +17,6 @@ const graph = new Graph(options);
 ## Options
 
 + **allowSelfLoops** <span class="code">[boolean]</span> <span class="default">true</span>: should the graph allow self-loops?
-+ **defaultEdgeAttributes** <span class="code">[object]</span>: default edge attributes merged with the provided ones.
-+ **defaultNodeAttributes** <span class="code">[object]</span>: default node attributes merged with the provided ones.
 + **edgeKeyGenerator** <span class="code">[function]</span>: Function used internally by the graph to produce keys for key-less edges. By default, the graph will produce boring internal incremental keys for you. For more information concerning the function you can provide, see [this](#edge-key-generator-function).
 + **multi** <span class="code">[boolean]</span> <span class="default">false</span>: Should the graph allow parallel edges?
 + **type** <span class="code">[string]</span> <span class="default">"mixed"</span>: Type of the graph. One of `directed`, `undirected` or `mixed`.
@@ -28,9 +26,6 @@ const graph = new Graph(options);
 ```js
 // Creating a multi-graph with no self-loops
 const graph = new Graph({multi: true, allowSelfLoops: false});
-
-// Creating a graph with default node attributes
-const graph = new Graph({defaultNodeAttributes: {size: 0}});
 ```
 
 ## Typed constructors
