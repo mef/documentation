@@ -54,7 +54,7 @@ console.log('Nodes', graph.nodes());
 
 `graphology` merely is a specification so that anyone can implement it its own way if necessary while keeping the advantages of being able to use the [standard library](#standard-library).
 
-Graphs are complex structures and, while we designed the reference implementation to handle most common cases with good performance, one will always be able to implement the present specifications in a more performant fashion for very specific use cases.
+Graphs are complex structures and, while we designed the reference implementation to handle most common cases with good performance, one will always be able to implement the present specifications in a more performant fashion for specific use cases.
 
 It is therefore possible to test your custom implementation against the specifications' unit tests.
 

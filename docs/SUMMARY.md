@@ -106,6 +106,4 @@
   * [#.toJSON](knownmethods.md#tojson)
   * [#.toString](knownmethods.md#tostring)
   * [#.inspect](knownmethods.md#inspect)
-* [Advanced](advanced.md)
-  * [Indices](advanced.md#indices)
 * [Running the unit tests](unittests.md)
