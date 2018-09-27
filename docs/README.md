@@ -31,7 +31,9 @@ graph.addEdge('John', 'Martha');
 console.log('Number of nodes', graph.order);
 console.log('Number of edges', graph.size);
 
-console.log('Nodes', graph.nodes());
+graph.forEachNode(node => {
+  graph.forEachNeighbor(node, neighbor => console.log(node, neighbor));
+});
 ```
 
 ## Standard library

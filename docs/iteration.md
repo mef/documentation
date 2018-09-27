@@ -1,6 +1,6 @@
 # Iteration
 
-Using a `Graph` instance, it is possible to iterate on the three following things:
+It is possible to iterate on the three following things:
 
 * [Nodes](#nodes)
 * [Edges](#edges)
@@ -14,9 +14,62 @@ The library basically proposes three ways to iterate:
 * Methods using callbacks.
 * Methods creating JavaScript [iterators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators) for lazy consumption (yet to be implemented!).
 
+## Adjacency
+
+Those methods iterate over the graph's adjacency, i.e. once per edge in the graph.
+
+**Examples**
+
+```js
+const graph = new Graph();
+
+graph.mergeEdge('Thomas', 'Elizabeth');
+graph.mergeEdge('John', 'Thomas');
+
+// Using the callback method
+graph.forEach(
+  (source, target, sourceAttributes, targetAttributes, edge, edgeAttributes) => {
+  console.log(source, target);
+});
+
+// Using the iterator
+for (const [source, target, ...] of graph.adjacency())
+  console.log(source, target);
+```
+
+### #.forEach
+
+Iterates over the graph's adjacency using a callback.
+
+**Arguments**
+
+* **callback** <span class="code">function</span>: callback to use.
+
+**Callback arguments**
+
+* **source** <span class="code">string</span>: source node's key.
+* **target** <span class="code">string</span>: target node's key.
+* **sourceAttributes** <span class="code">object</span>: source node's attributes.
+* **targetAttributes** <span class="code">object</span>: target node's attributes.
+* **edge** <span class="code">string</span>: edge's key.
+* **edgeAttributes** <span class="code">object</span>: edge's attributes.
+
+<h3 id="adjacency-iterator">#.adjacency</h3>
+
+Returns an iterator over the graph's adjacency.
+
+**Entries**
+
+* **source** <span class="code">string</span>: source node's key.
+* **target** <span class="code">string</span>: target node's key.
+* **sourceAttributes** <span class="code">object</span>: source node's attributes.
+* **targetAttributes** <span class="code">object</span>: target node's attributes.
+* **edge** <span class="code">string</span>: edge's key.
+* **edgeAttributes** <span class="code">object</span>: edge's attributes.
+
 ## Nodes
 
-Those methods iterate over the graph instance's nodes.
+Those methods iterate over the graph's nodes.
 
 **Examples**
 
@@ -34,6 +87,11 @@ graph.nodes();
 graph.forEachNode((node, attributes) => {
   console.log(node, attributes);
 });
+
+// Using the iterator
+for (const [node, attributes] of graph.nodeEntries()) {
+  console.log(node, attributes);
+}
 ```
 
 <h3 id="nodes-array">#.nodes</h3>
@@ -53,9 +111,18 @@ Iterates over each node using a callback.
 * **key** <span class="code">string</span>: the node's key.
 * **attributes** <span class="code">object</span>: the node's attributes.
 
+### #.nodeEntries
+
+Returns an iterator over the graph's nodes.
+
+**Entries**
+
+* **key** <span class="code">string</span>: the node's key.
+* **attributes** <span class="code">object</span>: the node's attributes.
+
 ## Edges
 
-These methods iterate over the graph instance's edges.
+These methods iterate over the graph's edges.
 
 **Examples**
 
@@ -82,13 +149,18 @@ graph.edges('John', 'Daniel');
 
 // Using the callback methods
 graph.forEachEdge(
-  (edge, attributes, source, target, sourceAttributes, targetAttrubutes) => {
+  (edge, attributes, source, target, sourceAttributes, targetAttributes) => {
     console.log(`Edge from ${source} to ${target}`);
 });
 
 // And the counterparts
 graph.forEachEdge('Thomas', callback);
 graph.forEachEdge('John', 'Daniel', callback);
+
+// Using the iterators
+for (const [edge, attributes, ...] of graph.edgeEntries()) {
+  console.log(edge, attributes);
+}
 ```
 
 <h3 id="edges-array">#.edges</h3>
@@ -151,6 +223,39 @@ Iterates over relevant edges using a callback.
 * **sourceAttributes** <span class="code">object</span>: attributes of the edge's source.
 * **targetAttributes** <span class="code">object</span>= attributes of the edge's target.
 
+### #.edgeEntries
+
+Returns an iterator over relevant edges.
+
+**Counterparts**
+
+```
+#.inEdgeEntries
+#.outEdgeEntries
+#.inboundEdgeEntries (in + undirected)
+#.outboundEdgeEntries (out + undirected)
+#.directedEdgeEntries
+#.undirectedEdgeEntries
+```
+
+**Arguments**
+
+1. **None**: iterate over every edge.
+2. **Using a node's key**: will iterate over the node's relevant attached edges.
+  * **node** <span class="code">any</span>: the related node's key.
+3. **Using source & target**: will iterate over the relevant edges going from source to target.
+  * **source** <span class="code">any</span>: the source node's key.
+  * **target** <span class="code">any</span>: the target node's key.
+
+**Entries**
+
+* **key** <span class="code">string</span>: the edge's key.
+* **attributes** <span class="code">object</span>: the edge's attributes.
+* **source** <span class="code">string</span>: key of the edge's source.
+* **target** <span class="code">string</span>: key of the edge's target.
+* **sourceAttributes** <span class="code">object</span>: attributes of the edge's source.
+* **targetAttributes** <span class="code">object</span>= attributes of the edge's target.
+
 ## Neighbors
 
 These methods iterate over the neighbors of the given node or nodes.
@@ -168,18 +273,23 @@ graph.addEdge('Rosaline', 'Catherine');
 graph.addEdge('John', 'Daniel');
 graph.addEdge('John', 'Daniel');
 
-// Asking whether two nodes are neighbors:
+// Asking whether two nodes are neighbors
 graph.neighbors('Thomas', 'Rosaline');
 >>> true
 
-// Using the array-returning methods:
+// Using the array-returning methods
 graph.neighbors('Thomas');
 >>> ['Rosaline', 'Emmett', 'Catherine']
 
-// Using the callback methods:
+// Using the callback methods
 graph.forEachNeighbor('Thomas', function(neighbor, attributes) {
   console.log(neighbor, attributes);
 });
+
+// Using the iterators
+for (const [neighbor, attributes] of graph.neighborEntries()) {
+  console.log(neighbor, attributes);
+}
 ```
 
 <h3 id="neighbors-array">#.neighbors</h3>
@@ -230,3 +340,30 @@ Iterates over the relevant neighbors using a callback.
 * **key** <span class="code">string</span>: the neighbor's key.
 * **attributes** <span class="code">object</span>: the neighbor's attributes.
 
+### #.neighborEntries
+
+Returns an iterator over the relevant neighbors.
+
+**Counterparts**
+
+```
+#.inNeighborEntries
+#.outNeighborEntries
+#.inboundNeighborEntries (in + undirected)
+#.outboundNeighborEntries (out + undirected)
+#.directedNeighborEntries
+#.undirectedNeighborEntries
+```
+
+**Arguments**
+
+1. **Using a node's key**: will iterate over the node's relevant neighbors.
+  * **node** <span class="code">any</span>: the node's key.
+2. **Using two nodes' keys**: will return whether the two given nodes are neighbors.
+  * **node1** <span class="code">any</span>: first node.
+  * **node2** <span class="code">any</span>: second node.
+
+**Entries**
+
+* **key** <span class="code">string</span>: the neighbor's key.
+* **attributes** <span class="code">object</span>: the neighbor's attributes.
