@@ -35,6 +35,10 @@ graph.forEach(
 // Using the iterator
 for (const [source, target, ...] of graph.adjacency())
   console.log(source, target);
+
+// Iterating over the graph itself is actually the same
+for (const [source, target, ...] of graph)
+  console.log(source, target);
 ```
 
 ### #.forEach
