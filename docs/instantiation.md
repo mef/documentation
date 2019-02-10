@@ -101,8 +101,7 @@ const generator = (function() {
 
 const graph = new Graph({edgeKeyGenerator: generator});
 
-graph.addNodesFrom(['John', 'Martha']);
-graph.addEdge('John', 'Martha');
+graph.mergeEdge('John', 'Martha');
 
 graph.edges('John', 'Martha');
 >>> ['0']
@@ -117,8 +116,7 @@ const generator = function({undirected, source, target, attributes}) {
 
 const graph = new Graph({edgeKeyGenerator: generator});
 
-graph.addNodesFrom(['John', 'Martha']);
-graph.addEdge('John', 'Martha');
+graph.mergeEdge('John', 'Martha');
 
 graph.edges('John', 'Martha');
 >>> ['John->Martha']
