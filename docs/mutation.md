@@ -151,7 +151,7 @@ graph.mergeEdge('John', 'Martha');
 
 // Note that if the edge already exists, attributes are merged
 graph.mergeEdge('John', 'Martha', {type: 'KNOWS'});
-graph.getEdgeAttribute('John', 'Martha');
+graph.getEdgeAttributes('John', 'Martha');
 >>> {
   type: 'KNOWS'
 }
