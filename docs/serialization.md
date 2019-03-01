@@ -38,7 +38,7 @@ graph.exportEdge('T->E');
 
 **Graph**
 
-A graph is serializd as an object containing an `attributes`, a `nodes` & an `edges` key:
+A graph is serialized as an object containing an `attributes`, a `nodes` & an `edges` key:
   * <span class="code">object</span> `attributes`: containing the attributes of the graph (can be omitted).
   * <span class="code">object</span> `nodes`: containing a list of serialized nodes (can be omitted when merging).
   * <span class="code">object</span> `edges`: containing a list of serialized edges (can be omitted).
