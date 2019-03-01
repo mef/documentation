@@ -185,7 +185,7 @@ graph.mergeEdgeWithKey('J->M', 'John', 'Martha');
 
 // Note that if the edge already exists, attributes are merged
 graph.mergeEdgeWithKey('J->M', 'John', 'Martha', {type: 'KNOWS'});
-graph.getEdgeAttribute('J->M');
+graph.getEdgeAttributes('J->M');
 >>> {
   type: 'KNOWS'
 }
