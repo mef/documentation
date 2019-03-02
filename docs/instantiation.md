@@ -79,8 +79,6 @@ const graph = UndirectedGraph.from(data);
 * **data** <span class="code">Graph|SerializedGraph</span>: pre-existing data to give to the constructor. This data can either be an existing `Graph` instance, and in this case both nodes & edges will be imported from the given graph, or a serialized graph whose format is described [here](serialization.md#format).
 * **options** <span class="code">[object]</span>: options passed to the created graph.
 
----
-
 ## Edge key generator function
 
 The provided function takes a single object describing the created edge & having the following properties:
