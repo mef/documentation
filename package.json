@@ -34,7 +34,8 @@
     "gitbook-cli": "^2.3.0",
     "gitbook-plugin-addcssjs": "^1.0.2",
     "gitbook-plugin-github": "^2.0.0",
-    "gitbook-plugin-prism": "^1.1.0"
+    "gitbook-plugin-prism": "^1.1.0",
+    "rimraf": "^3.0.1"
   },
   "dependencies": {
     "gitbook-plugin-prism": "^2.4.0"
