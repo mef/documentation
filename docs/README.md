@@ -43,6 +43,7 @@ graph.forEachNode(node => {
 * [graphology-components](https://github.com/graphology/graphology-components#readme)<br>*Connected components (strong, weak etc.).*
 * [graphology-generators](https://github.com/graphology/graphology-generators#readme)<br>*Graph generators (random graphs, complete graphs etc.).*
 * [graphology-gexf](https://github.com/graphology/graphology-gexf#readme)<br>*Parsers & writers for the GEXF file format.*
+* [graphology-graphml](https://github.com/graphology/graphology-graphml#readme)<br>*Parsers & writers for the GRAPHML file format.*
 * [graphology-hits](https://github.com/graphology/graphology-hits#readme)<br>*HITS algorithm.*
 * [graphology-layout](https://github.com/graphology/graphology-layout#readme)<br>*Basic graph layouts (random, circle etc.).*
 * [graphology-layout-forceatlas2](https://github.com/graphology/graphology-layout-forceatlas2#readme)<br>*ForceAtlas2 layout algorithm.*
