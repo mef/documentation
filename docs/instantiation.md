@@ -49,13 +49,14 @@ Then to build the name, one must order the components likewise:
 Multi? + Type? + Graph
 ```
 
-*Examples*
+*List of all the typed constructors*
 
-```js
-MultiGraph
+```
 DirectedGraph
+UndirectedGraph
+MultiGraph
+MultiDirectedGraph
 MultiUndirectedGraph
-(...)
 ```
 
 ## Static #.from method
