@@ -105,6 +105,7 @@
   * [#.exportEdge](serialization.md#exportedge)
 * [Utils](utils.md)
   * [#.copy](utils.md#copy)
+  * [#.nullCopy](utils.md#nullcopy)
   * [#.emptyCopy](utils.md#emptycopy)
   * [#.upgradeToMixed](utils.md#upgradetomixed)
   * [#.upgradeToMulti](utils.md#upgradetomulti)
